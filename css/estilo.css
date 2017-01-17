@@ -1,0 +1,53 @@
+/*@font-face {
+    font-family: 'light';
+    src: url('fonts/HelveticaLt.ttf') format('truetype');
+}*/
+.typed-cursor {
+  display: none; }
+
+.container-fluid {
+  padding: 0; }
+
+#sec-1 {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 711px;
+  background: #b71d29;
+  background: -moz-linear-gradient(45deg, #b71d19 2%, #bf1c19 79%, #e04a14 79%, #e04a14 100%);
+  background: -webkit-linear-gradient(45deg, #b71d19 2%, #e04a14 79%, #e04a14 79%, #e04a14 100%);
+  background: linear-gradient(45deg, #b71d19 2%, #e04a14 79%, #e04a14 79%, #e04a14 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b71d19', endColorstr='#e04a14',GradientType=1 ); }
+  #sec-1 #video {
+    /*background: url(../img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;*/
+    position: absolute;
+    height: 711px;
+    width: 100%;
+    opacity: 0.5; }
+    #sec-1 #video video {
+      max-height: 100%;
+      width: 100%; }
+  #sec-1 #conteudo {
+    z-index: 1000; }
+    #sec-1 #conteudo h1 {
+      color: white;
+      text-align: center; }
+    #sec-1 #conteudo h4 {
+      color: white;
+      text-align: center; }
+    #sec-1 #conteudo #botao {
+      padding-top: 20px; }
+      #sec-1 #conteudo #botao button {
+        background-color: transparent;
+        color: white;
+        border-color: white;
+        border-radius: 8px; }
+
+#sec-2 {
+  background-color: #f2f2f2; }
+
+/*# sourceMappingURL=estilo.css.map */

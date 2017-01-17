@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Casos Jurídicos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/typed.js"></script>
+    
+    <script>
+      $(function(){
+          $(".element").typed({
+            strings: ["^2000 Estamos prontos para atendê-lo com os melhores do mercado!"],
+            typeSpeed: 0
+          });
+      });
+    </script>
+    
+    <link rel="stylesheet" href="css/estilo.css">
+    
+    <script>
+
+    </script>
+
+</head>
+<body>
+
+    <div class="container-fluid">
+        
+        <div id="sec-1">
+            
+            <div id="conteudo">
+                <img class="center-block" src="img/logo.png" alt="">
+                <h1>O seu caso jurídico precisa do melhor advogado</h1>
+                <h4 class="element center-block"></h4>
+                <div id="botao">
+                    <button type="button" class="btn btn-default center-block">Envie seu caso jurídico agora!</button>
+                </div>  
+            </div>
+            <div id="video">
+                <video autoplay="" preload="auto" loop="loop" muted="" poster="http://www.easytaxi.com/wp-content/uploads/2015/03/home-banner.jpg" id="pretzel-video" class="video-playing">
+                        <source src="http://www.easytaxi.com/wp-content/uploads/2015/03/easy-taxi.mp4" type="video/mp4">
+
+                        <source src="http://www.easytaxi.com/wp-content/uploads/2015/03/easy-taxi.webm" type="video/webm">
+
+                </video>
+            </div>    
+            
+            
+        </div>
+        <div id="sec-2">
+            <h2>Como funciona</h2>
+        </div>
+
+        
+
+ 
+ 
+
+
+        
+        
+        
+    </div>
+    
+    
+    <script>
+    var angle = 0;
+    var test = $('#sec-1');
+    function changeAngle() {
+        angle = (angle - 1) % 360;
+        test.css({
+            'background': '-webkit-linear-gradient(' + angle + 'deg ,#b71d19 2%,#e04a14 79%,#e04a14 79%,#e04a14 100%)'
+        });
+    }
+    //setInterval(changeAngle, 200);
+    </script>
+    
+    <script>
+    
+        $(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+    </script>
+    
+</body>
+</html>
