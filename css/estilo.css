@@ -49,5 +49,8 @@
 
 #sec-2 {
   background-color: #f2f2f2; }
+  #sec-2 h2 {
+    padding: 0;
+    margin: 0; }
 
 /*# sourceMappingURL=estilo.css.map */
