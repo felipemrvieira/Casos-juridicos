@@ -2,6 +2,18 @@
     font-family: 'light';
     src: url('fonts/HelveticaLt.ttf') format('truetype');
 }*/
+@font-face {
+  font-family: 'roboto';
+  src: url("fonts/roboto/Roboto-Thin.ttf") format("truetype"); }
+body {
+  font-family: 'roboto'; }
+
+.branco {
+  color: white; }
+
+.texto-centro {
+  text-align: center; }
+
 .typed-cursor {
   display: none; }
 
@@ -25,11 +37,40 @@
     background-size: cover;
     background-position: center;*/
     position: absolute;
-    height: 711px;
     width: 100%;
-    opacity: 0.5; }
-    #sec-1 #video video {
-      max-height: 100%;
+    opacity: 0.6; }
+    #sec-1 #video .homepage-hero-module {
+      border-right: none;
+      border-left: none;
+      position: relative; }
+    #sec-1 #video .no-video .video-container video,
+    #sec-1 #video .touch .video-container video {
+      display: none; }
+    #sec-1 #video .no-video .video-container .poster,
+    #sec-1 #video .touch .video-container .poster {
+      display: block !important; }
+    #sec-1 #video .video-container {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: #000; }
+    #sec-1 #video .video-container .poster img {
+      width: 100%;
+      bottom: 0;
+      position: absolute; }
+    #sec-1 #video .video-container .filter {
+      z-index: 100;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.4);
+      width: 100%; }
+    #sec-1 #video .video-container video {
+      position: absolute;
+      z-index: 0;
+      bottom: 0; }
+    #sec-1 #video .video-container video.fillWidth {
       width: 100%; }
   #sec-1 #conteudo {
     z-index: 1000; }
@@ -45,12 +86,45 @@
         background-color: transparent;
         color: white;
         border-color: white;
-        border-radius: 8px; }
+        border-radius: 8px;
+        padding: 10px 20px; }
 
 #sec-2 {
-  background-color: #f2f2f2; }
+  background-color: #f2f2f2;
+  padding-bottom: 40px; }
   #sec-2 h2 {
-    padding: 0;
+    text-align: center;
+    padding: 32px 0 42px 0;
     margin: 0; }
+  #sec-2 p {
+    font-size: 20px; }
+  #sec-2 .ajuste-img {
+    width: 30%;
+    padding: 0 0 16px 0; }
+
+#sec-3 {
+  padding-bottom: 35px; }
+  #sec-3 h1 {
+    text-align: center;
+    padding: 32px 0 42px 0;
+    margin: 0; }
+
+#sec-4 {
+  background-color: #737373;
+  position: relative;
+  padding: 32px 32px 32px 32px; }
+  #sec-4 #app-container {
+    position: absolute;
+    top: -125px; }
+    #sec-4 #app-container #app {
+      width: 80%; }
+  #sec-4 h1 {
+    text-align: center;
+    padding: 32px 0 42px 0;
+    margin: 0; }
+  #sec-4 p {
+    color: white;
+    font-size: 18px;
+    padding-bottom: 12px; }
 
 /*# sourceMappingURL=estilo.css.map */
