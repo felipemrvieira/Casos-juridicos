@@ -5,25 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Casos Jurídicos</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/typed.js"></script>
-
-    <script>
-      $(function(){
-          $(".element").typed({
-            strings: ["^2000 Estamos prontos para atendê-lo com os melhores do mercado!"],
-            typeSpeed: 0
-          });
-      });
-    </script>
-
-    <link rel="stylesheet" href="css/estilo.css">
-
-    <script>
-
-    </script>
+    <script src="js/video.js"></script>
 
 </head>
 <body>
@@ -37,30 +28,133 @@
                 <h1>O seu caso jurídico precisa do melhor advogado</h1>
                 <h4 class="element center-block"></h4>
                 <div id="botao">
-                    <button type="button" class="btn btn-default center-block">Envie seu caso jurídico agora!</button>
+                    <button type="button" class="btn btn-default center-block option animated fadeInDown">Envie seu caso jurídico agora!</button>
                 </div>
+
             </div>
+            <p class="center-block"><a href="#sec-2 ">Saiba mais!</a></p>
             <div id="video">
-              <video autoplay="" preload="auto" loop="loop" muted="" poster="video/Diagonal.jpg" id="pretzel-video" class="video-playing">
-                        <!-- <source src="http://www.easytaxi.com/wp-content/uploads/2015/03/easy-taxi.mp4" type="video/mp4">
-                        <source src="http://www.easytaxi.com/wp-content/uploads/2015/03/easy-taxi.webm" type="video/webm"> -->
+              <!-- <video autoplay="" preload="auto" loop="loop" muted="" poster="video/Diagonal.jpg" id="pretzel-video" class="video-playing">
+                        <source src="http://www.easytaxi.com/wp-content/uploads/2015/03/easy-taxi.mp4" type="video/mp4">
+                        <source src="http://www.easytaxi.com/wp-content/uploads/2015/03/easy-taxi.webm" type="video/webm">
 
                         <source src="video/Diagonal.mp4" type="video/mp4" />
                         <source src="video/Diagonal.webm" type="video/webm" />
 
-                </video>
-                <img src="video/Diagonal.jpg" alt="">
+                </video> -->
+
+                <div class="homepage-hero-module">
+                  <div class="video-container">
+                      <div class="filter"></div>
+                      <video autoplay loop class="fillWidth">
+                        <source src="video/Diagonal.mp4" type="video/mp4" />
+                        <source src="video/Diagonal.webm" type="video/webm" />
+                      </video>
+                      <div class="poster hidden">
+                          <img src="video/Diagonal.jpg" alt="">
+                      </div>
+                  </div>
+              </div>
             </div>
 
 
         </div>
         <div id="sec-2">
-          <div class="">
+          <div class="container-fluid">
+
             <h2>Como funciona</h2>
-            <br>
+            <div class="col-md-3">
+              <img class="center-block ajuste-img" src="img/informe2.png" alt="">
+              <p class="texto-centro">Informe seu problema gratuitamente e com segurança.</p>
+            </div>
+            <div class="col-md-3">
+              <img class="center-block ajuste-img" src="img/selecionaremos2.png" alt="">
+              <p class="texto-centro">Selecionaremos o melhor advogado para o seu caso jurídico.</p>
+            </div>
+            <div class="col-md-3">
+              <img class="center-block ajuste-img" src="img/contato-advogado2.png" alt="">
+              <p class="texto-centro">Advogados da sua região entrarão em contato para te orientar com sigilo.</p>
+            </div>
+            <div class="col-md-3">
+              <img class="center-block ajuste-img" src="img/contrate2.png" alt="">
+              <p class="texto-centro">Contrate um advogado, caso necessário.</p>
+            </div>
+
           </div>
 
         </div>
+
+        <div id="sec-3">
+          <div class="container-fluid">
+              <h1 class="texto-centro">Fale com um advogado. A qualquer hora. De qualquer lugar!</h1>
+          </div>
+        </div>
+
+        <div id="sec-4">
+
+          <div class="container-fluid">
+
+            <div id="app-container" class="col-md-6">
+              <img id="app" class="center-block" src="img/app.png" alt="">
+            </div>
+            <div class="col-md-5">
+            </div>
+
+            <div class="col-md-7">
+              <div class="container-fluid branco">
+                <p>Encontre um advogado na sua região de acordo com o seu caso jurídico</p>
+                <p>Todas as informações passadas estarão guardadas em sigilo. Não se preocupe!</p>
+                <p>Praticidade: ganhe tempo e tenha os maiores profissionais 24h por dia.</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div id="sec-5">
+
+          <div class="container-fluid">
+            <div class="col-md-5"></div>
+
+            <div class="col-md-7">
+              <div class="container-fluid">
+                <h1>Tem um problema e precisa conversar com um advogado?</h1>
+                <p>Fale com Eloisa, nossa assistente virtual!</p>
+                <div id="botao">
+                    <button type="button" class="btn btn-default center-block">Envie seu caso jurídico agora!</button>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div id="sec-6">
+          <div class="container-fluid">
+            <div id="logo">
+              <img class="center-block" src="img/logo-branca.png" alt="">
+            </div>
+            <ul>
+              <li>Quem Somos</li>
+              <li>Blog</li>
+              <li>Nossas regras</li>
+            </ul>
+
+
+            <ul id="social">
+              <li><a href="#"> <i class="fa fa-facebook fa-1x" aria-hidden="true"></i></a></li>
+              <li><a href="#"> <i class="fa fa-instagram fa-1x"></i></a></li>
+            </ul>
+
+
+          </div>
+        </div>
+
+
+
 
 
 
@@ -102,6 +196,16 @@
     }
   });
 });
+    </script>
+
+
+    <script>
+      $(function(){
+          $(".element").typed({
+            strings: ["^900 Estamos prontos para atendê-lo com os melhores profissionais do mercado!"],
+            typeSpeed: 0
+          });
+      });
     </script>
 
 </body>

@@ -5,6 +5,12 @@
 @font-face {
   font-family: 'roboto';
   src: url("fonts/roboto/Roboto-Thin.ttf") format("truetype"); }
+.option {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 4s;
+  animation-duration: 2s;
+  animation-delay: 4s; }
+
 body {
   font-family: 'roboto'; }
 
@@ -23,6 +29,7 @@ body {
 #sec-1 {
   display: -webkit-flex;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 711px;
@@ -73,21 +80,33 @@ body {
     #sec-1 #video .video-container video.fillWidth {
       width: 100%; }
   #sec-1 #conteudo {
-    z-index: 1000; }
+    z-index: 1000;
+    margin-top: 180px; }
     #sec-1 #conteudo h1 {
       color: white;
       text-align: center; }
     #sec-1 #conteudo h4 {
       color: white;
       text-align: center; }
-    #sec-1 #conteudo #botao {
-      padding-top: 20px; }
-      #sec-1 #conteudo #botao button {
-        background-color: transparent;
-        color: white;
-        border-color: white;
-        border-radius: 8px;
-        padding: 10px 20px; }
+  #sec-1 p {
+    z-index: 1001;
+    margin-top: auto;
+    margin-bottom: 30px;
+    align-self: flex-end;
+    color: white;
+    text-align: center;
+    font-size: 16px; }
+    #sec-1 p a {
+      color: white; }
+  #sec-1 #botao {
+    padding-top: 20px; }
+    #sec-1 #botao button {
+      background-color: transparent;
+      color: white;
+      font-size: 16px;
+      border-color: white;
+      border-radius: 8px;
+      padding: 10px 20px; }
 
 #sec-2 {
   background-color: #f2f2f2;
@@ -99,7 +118,8 @@ body {
   #sec-2 p {
     font-size: 20px; }
   #sec-2 .ajuste-img {
-    width: 30%;
+    width: 45%;
+    opacity: 0.6;
     padding: 0 0 16px 0; }
 
 #sec-3 {
@@ -110,14 +130,14 @@ body {
     margin: 0; }
 
 #sec-4 {
-  background-color: #737373;
+  background-color: #4c4c4c;
   position: relative;
   padding: 32px 32px 32px 32px; }
   #sec-4 #app-container {
     position: absolute;
     top: -125px; }
     #sec-4 #app-container #app {
-      width: 80%; }
+      width: 65%; }
   #sec-4 h1 {
     text-align: center;
     padding: 32px 0 42px 0;
@@ -126,5 +146,48 @@ body {
     color: white;
     font-size: 18px;
     padding-bottom: 12px; }
+
+#sec-5 {
+  padding: 20px 32px 50px 32px; }
+  #sec-5 h1 {
+    text-align: justify;
+    padding: 32px 0 24px 0;
+    margin: 0; }
+  #sec-5 p {
+    text-align: center;
+    font-size: 18px; }
+  #sec-5 #botao {
+    padding-top: 20px; }
+    #sec-5 #botao button {
+      color: #e04a14;
+      font-size: 24px;
+      background-color: transparent;
+      border-color: #b71d19;
+      border-radius: 8px;
+      padding: 10px 20px; }
+
+#sec-6 {
+  height: 500px;
+  background: #b71d29;
+  background: -moz-linear-gradient(45deg, #b71d19 2%, #bf1c19 79%, #e04a14 79%, #e04a14 100%);
+  background: -webkit-linear-gradient(45deg, #b71d19 2%, #e04a14 79%, #e04a14 79%, #e04a14 100%);
+  background: linear-gradient(45deg, #b71d19 2%, #e04a14 79%, #e04a14 79%, #e04a14 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b71d19', endColorstr='#e04a14',GradientType=1 ); }
+  #sec-6 #logo {
+    padding-top: 120px; }
+  #sec-6 ul {
+    text-align: center;
+    padding-top: 32px; }
+    #sec-6 ul li {
+      font-size: 20px;
+      color: white;
+      padding-right: 32px;
+      display: inline-block;
+      text-align: center; }
+      #sec-6 ul li a {
+        color: white; }
+  #sec-6 #social {
+    margin-top: 0;
+    padding-top: 0; }
 
 /*# sourceMappingURL=estilo.css.map */

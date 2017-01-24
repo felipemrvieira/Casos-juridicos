@@ -8,8 +8,18 @@
     src: url('fonts/roboto/Roboto-Thin.ttf') format('truetype');
   }
 
+  .option {
+      -webkit-animation-duration: 2s;
+      -webkit-animation-delay: 4s;
+      animation-duration: 2s;
+      animation-delay: 4s;
+
+  }
+
+
 $cinza-claro: #f2f2f2;
-$cinza-escuro: #f2f2f2;
+$laranja-claro: #e04a14;
+$laranja-escuro: #b71d19;
 
 
 body{
@@ -33,6 +43,7 @@ body{
 #sec-1 {
     display: -webkit-flex;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
@@ -100,6 +111,7 @@ body{
     }
     #conteudo{
         z-index: 1000;
+        margin-top: 180px;
         img{
 
         }
@@ -113,23 +125,39 @@ body{
             text-align: center;
         }
 
+    }
+        p{
+          z-index: 1001;
+          margin-top: auto;
+          margin-bottom: 30px;
+          align-self: flex-end;
+          color: white;
+          text-align: center;
+          font-size: 16px;
+
+          a{
+            color: white;
+          }
+        }
+
         #botao{
             padding-top: 20px;
             button{
                 background-color: transparent;
                 color: white;
+                font-size: 16px;
                 border-color: white;
                 border-radius: 8px;
                 padding: 10px 20px;
             }
         }
-    }
-
 }
 
 #sec-2{
   background-color: $cinza-claro;
   padding-bottom: 40px;
+
+
 
     h2{
       text-align: center;
@@ -142,13 +170,15 @@ body{
     }
 
     .ajuste-img{
-      width: 30%;
+      width: 45%;
+      opacity: 0.6;
       padding: 0 0 16px 0
     }
 }
 
 #sec-3{
   padding-bottom: 35px;
+
   h1{
     text-align: center;
     padding: 32px 0 42px 0;
@@ -157,7 +187,9 @@ body{
 }
 
 #sec-4{
-  background-color: darken($cinza-claro, 50%);
+  background-color: darken($cinza-claro, 65%);
+
+
   position: relative;
   padding: 32px 32px 32px 32px;
 
@@ -166,7 +198,7 @@ body{
     top: -125px;
 
     #app{
-      width: 80%;
+      width: 65%;
     }
   }
 
@@ -182,4 +214,65 @@ body{
     font-size: 18px;
     padding-bottom: 12px;
   }
+}
+
+#sec-5{
+  padding: 20px 32px 50px 32px;
+
+  h1{
+    text-align: justify;
+    padding: 32px 0 24px 0;
+    margin: 0;
+  }
+
+  p{
+    text-align: center;
+    font-size: 18px;
+  }
+
+  #botao{
+      padding-top: 20px;
+      button{
+          color: $laranja-claro;
+          font-size: 24px;
+          background-color: transparent;
+          border-color: $laranja-escuro;
+          border-radius: 8px;
+          padding: 10px 20px;
+      }
+  }
+}
+
+#sec-6{
+  height: 500px;
+  background: #b71d29;
+  background: -moz-linear-gradient(45deg,  #b71d19 2%, #bf1c19 79%, #e04a14 79%, #e04a14 100%);
+  background: -webkit-linear-gradient(45deg,  #b71d19 2%, #e04a14 79%,#e04a14 79%,#e04a14 100%);
+  background: linear-gradient(45deg,  #b71d19 2%,#e04a14 79%,#e04a14 79%,#e04a14 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b71d19', endColorstr='#e04a14',GradientType=1 );
+
+  #logo{
+    padding-top: 120px;
+  }
+
+  ul{
+    text-align: center;
+    padding-top: 32px;
+    li{
+      font-size: 20px;
+      color: white;
+      padding-right: 32px;
+      display: inline-block;
+      text-align: center;
+      a{
+        color: white;
+      }
+    }
+  }
+
+  #social{
+    margin-top: 0;
+    padding-top: 0;
+  }
+
 }
