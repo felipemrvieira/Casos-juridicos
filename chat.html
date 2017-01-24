@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Casos Jurídicos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/typed.js"></script>
+    <script src="js/video.js"></script>
+
+</head>
+<body>
+
+    <div class="container-fluid">
+
+        <div id="chat">
+          <div class="container-fluid">
+
+            <div id="header">
+              <div class="container">
+                <div id="voltar">
+                  <a href="index.html"> <i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i> </a>
+                </div>
+                <p class="center-block">Fale com a Eloisa!</p>
+              </div>
+            </div>
+
+            <div id="conversa" class=" ">
+
+
+
+            </div>
+
+            <!--MENSAGEM-->
+            <script id="hidden-template" type="text/x-custom-template">
+              <div class="mensagem animated bounceInUp">
+                <div class="avatar">
+                  <img src="img/logo-avatar.png" alt="">
+                </div>
+                <div class="texto">
+                  <p></p>
+                </div>
+              </div>
+            </script>
+
+
+          </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script>
+
+        $(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+    </script>
+
+
+    <script>
+    var template = $('#hidden-template').html();
+    var mensagem = ["Olá, meu nome é Eloisa! Como posso ajudá-lo?", "OK! Deixe-me ver..."];
+    var i = 0;
+
+    $('body').click(function() {
+        $('#conversa').append(template);
+        digita(mensagem[i], 30);
+        i += 1;
+    });
+
+    function digita(mensagem, tempo){
+        $(".texto:last-child").typed({
+          strings: ["<p>"+mensagem+"</p>"],
+          typeSpeed: tempo
+        });
+    };
+    </script>
+
+    </script>
+
+</body>
+</html>

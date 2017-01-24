@@ -101,7 +101,8 @@ body {
       color: white; }
   #sec-1 #botao {
     padding-top: 20px; }
-    #sec-1 #botao button {
+    #sec-1 #botao a {
+      width: 40%;
       background-color: transparent;
       color: white;
       font-size: 16px;
@@ -159,7 +160,8 @@ body {
     font-size: 18px; }
   #sec-5 #botao {
     padding-top: 20px; }
-    #sec-5 #botao button {
+    #sec-5 #botao a {
+      width: 70%;
       color: #e04a14;
       font-size: 24px;
       background-color: transparent;
@@ -190,5 +192,44 @@ body {
   #sec-6 #social {
     margin-top: 0;
     padding-top: 0; }
+
+#chat #header {
+  background: #b71d29;
+  background: -moz-linear-gradient(45deg, #b71d19 2%, #bf1c19 79%, #e04a14 79%, #e04a14 100%);
+  background: -webkit-linear-gradient(45deg, #b71d19 2%, #e04a14 79%, #e04a14 79%, #e04a14 100%);
+  background: linear-gradient(45deg, #b71d19 2%, #e04a14 79%, #e04a14 79%, #e04a14 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b71d19', endColorstr='#e04a14',GradientType=1 );
+  color: white;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  margin-bottom: 64px; }
+  #chat #header .container {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row; }
+    #chat #header .container #voltar {
+      color: white;
+      display: inline-block; }
+      #chat #header .container #voltar a {
+        color: white; }
+    #chat #header .container p {
+      display: inline-block;
+      margin-bottom: 0;
+      font-size: 18px; }
+#chat #conversa {
+  padding: 10px 300px 10px 300px; }
+  #chat #conversa .mensagem {
+    margin-bottom: 32px; }
+    #chat #conversa .mensagem .avatar {
+      vertical-align: super;
+      display: inline-block; }
+      #chat #conversa .mensagem .avatar img {
+        width: 24px; }
+    #chat #conversa .mensagem .texto {
+      display: inline-block; }
+      #chat #conversa .mensagem .texto p {
+        margin-bottom: 0;
+        padding-left: 10px;
+        font-size: 24px; }
 
 /*# sourceMappingURL=estilo.css.map */
