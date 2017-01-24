@@ -280,7 +280,13 @@ body{
 
 }
 
+#chat::-webkit-scrollbar {
+  display: none;
+}
+
 #chat{
+
+
   #header{
     @include degrade();
     color: white;
@@ -312,7 +318,7 @@ body{
 
     .mensagem{
       margin-bottom: 32px;
-      
+
       .avatar{
         img{
           width: 24px;

@@ -193,6 +193,9 @@ body {
     margin-top: 0;
     padding-top: 0; }
 
+#chat::-webkit-scrollbar {
+  display: none; }
+
 #chat #header {
   background: #b71d29;
   background: -moz-linear-gradient(45deg, #b71d19 2%, #bf1c19 79%, #e04a14 79%, #e04a14 100%);
