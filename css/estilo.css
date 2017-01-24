@@ -14,6 +14,12 @@
 body {
   font-family: 'roboto'; }
 
+body::-webkit-scrollbar {
+  display: none; }
+
+body::scrollbar {
+  display: none; }
+
 .branco {
   color: white; }
 
@@ -192,9 +198,6 @@ body {
   #sec-6 #social {
     margin-top: 0;
     padding-top: 0; }
-
-#chat::-webkit-scrollbar {
-  display: none; }
 
 #chat #header {
   background: #b71d29;

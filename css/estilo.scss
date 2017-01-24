@@ -33,6 +33,13 @@ body{
   font-family: 'roboto';
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+body::scrollbar {
+  display: none;
+}
+
 .branco{
   color: white;
 }
@@ -279,11 +286,6 @@ body{
   }
 
 }
-
-#chat::-webkit-scrollbar {
-  display: none;
-}
-
 #chat{
 
 
