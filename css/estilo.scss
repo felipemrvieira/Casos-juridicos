@@ -316,12 +316,16 @@ body::scrollbar {
   }
 
   #conversa{
-    padding: 10px 300px 10px 300px;
+    padding: 10px 250px 200px 250px;
+    overflow-y: auto;
 
-    .mensagem{
+    .mensagem-container{
       margin-bottom: 32px;
 
+
       .avatar{
+        float: left;
+        padding-top: 4px;
         img{
           width: 24px;
         }
@@ -329,14 +333,53 @@ body::scrollbar {
         display: inline-block;
       }
       .texto{
+        width: 90%;
         display: inline-block;
-        p{
-          margin-bottom: 0;
-          padding-left: 10px;
-          font-size: 24px;
-        }
+        margin-bottom: 0;
+        font-size: 24px;
+        letter-spacing: 0.1rem;
+        text-align: left;
+        padding: 1px 15px 0;
+
       }
     }
+  }
+
+  #form-container{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 25px;
+    background-color: $cinza-claro;
+
+    .input-texto-container{
+      width: 80%;
+      #input-texto{
+        width: 100%;
+        background-color: $cinza-claro;
+        border: none;
+        box-shadow: none;
+        font-size: 30px;
+      }
+    }
+
+    .input-botao-container{
+      width: 15%;
+      #botao-enviar{
+        width: 100%;
+        color: white;
+        font-size: 24px;
+        background-color: $laranja-claro;
+        border-color: $laranja-claro;
+        border-radius: 8px;
+        padding: 10px 20px;
+      }
+    }
+
+
+
+
   }
 
 

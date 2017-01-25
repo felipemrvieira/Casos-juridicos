@@ -30,26 +30,42 @@
                   <a href="index.html"> <i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i> </a>
                 </div>
                 <p class="center-block">Fale com a Eloisa!</p>
+                <div id="voltar">
+                  <i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" style="opacity:0"></i>
+                </div>
               </div>
             </div>
 
             <div id="conversa" class=" ">
-
-
-
+              <!--TEMPLATE MENSAGEM-->
+              <script id="hidden-template" type="text/x-custom-template">
+                <div class="mensagem-container animated bounceInUp">
+                  <div class="avatar">
+                    <img src="img/logo-avatar.png" alt="">
+                  </div>
+                  <div class="texto">
+                    <p></p>
+                  </div>
+                </div>
+              </script>
+              <!--TEMPLATE MENSAGEM-->
             </div>
 
-            <!--MENSAGEM-->
-            <script id="hidden-template" type="text/x-custom-template">
-              <div class="mensagem animated bounceInUp">
-                <div class="avatar">
-                  <img src="img/logo-avatar.png" alt="">
+
+            <!-- FORM -->
+            <div id="form-container" class="">
+              <form class="form-inline container">
+                <div class="input-texto-container form-group">
+                  <input type="text" class="form-control" id="input-texto" placeholder="digite aqui">
                 </div>
-                <div class="texto">
-                  <p></p>
+                <div class="input-botao-container form-group">
+                  <button type="submit" id="botao-enviar" class="btn btn-default">Enviar</button>
                 </div>
-              </div>
-            </script>
+              </form>
+            </div>
+
+            <!-- FORM -->
+
 
 
           </div>
@@ -82,20 +98,43 @@
 
     <script>
     var template = $('#hidden-template').html();
-    var mensagem = ["Olá, meu nome é Eloisa! Como posso ajudá-lo?", "OK! Deixe-me ver..."];
+    var mensagem = ["Olá, eu sou Eloisa. :)",
+    "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar!",
+    "Antes de começarmos, como posso te chamar?",
+    "Prazer FULANO! Então, a primeira coisa a fazer, é identificar o problema que te trás aqui. Para isso, vou fazer algumas perguntas básicas, ok?",
+    "Qual a cidade que você mora?",
+    "Você quer contratar um advogado ou apenas tirar uma dúvida?",
+    "Do que se trata o seu caso?",
+    ];
     var i = 0;
+
+    $(function() {
+        $('#conversa').append(template);
+        digita(mensagem[i], 3);
+    });
 
     $('body').click(function() {
         $('#conversa').append(template);
-        digita(mensagem[i], 30);
-        i += 1;
+        digita(mensagem[i], 3);
+
     });
+
+    function chamaDigita() {
+        $('#conversa').append(template);
+        $(document).scrollTop(1000);
+
+
+        digita(mensagem[i], 3);
+
+    };
 
     function digita(mensagem, tempo){
         $(".texto:last-child").typed({
-          strings: ["<p>"+mensagem+"</p>"],
-          typeSpeed: tempo
+          strings: [mensagem],
+          typeSpeed: tempo,
+          callback: function() {chamaDigita()}
         });
+        i += 1;
     };
     </script>
 

@@ -223,19 +223,49 @@ body::scrollbar {
       margin-bottom: 0;
       font-size: 18px; }
 #chat #conversa {
-  padding: 10px 300px 10px 300px; }
-  #chat #conversa .mensagem {
+  padding: 10px 250px 200px 250px;
+  overflow-y: auto; }
+  #chat #conversa .mensagem-container {
     margin-bottom: 32px; }
-    #chat #conversa .mensagem .avatar {
+    #chat #conversa .mensagem-container .avatar {
+      float: left;
+      padding-top: 4px;
       vertical-align: super;
       display: inline-block; }
-      #chat #conversa .mensagem .avatar img {
+      #chat #conversa .mensagem-container .avatar img {
         width: 24px; }
-    #chat #conversa .mensagem .texto {
-      display: inline-block; }
-      #chat #conversa .mensagem .texto p {
-        margin-bottom: 0;
-        padding-left: 10px;
-        font-size: 24px; }
+    #chat #conversa .mensagem-container .texto {
+      width: 90%;
+      display: inline-block;
+      margin-bottom: 0;
+      font-size: 24px;
+      letter-spacing: 0.1rem;
+      text-align: left;
+      padding: 1px 15px 0; }
+#chat #form-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 25px;
+  background-color: #f2f2f2; }
+  #chat #form-container .input-texto-container {
+    width: 80%; }
+    #chat #form-container .input-texto-container #input-texto {
+      width: 100%;
+      background-color: #f2f2f2;
+      border: none;
+      box-shadow: none;
+      font-size: 30px; }
+  #chat #form-container .input-botao-container {
+    width: 15%; }
+    #chat #form-container .input-botao-container #botao-enviar {
+      width: 100%;
+      color: white;
+      font-size: 24px;
+      background-color: #e04a14;
+      border-color: #e04a14;
+      border-radius: 8px;
+      padding: 10px 20px; }
 
 /*# sourceMappingURL=estilo.css.map */
