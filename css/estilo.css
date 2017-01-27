@@ -26,6 +26,9 @@ body::scrollbar {
 .texto-centro {
   text-align: center; }
 
+.txt-right {
+  text-align: right; }
+
 .typed-cursor {
   display: none; }
 
@@ -227,13 +230,20 @@ body::scrollbar {
   overflow-y: auto; }
   #chat #conversa .mensagem-container {
     margin-bottom: 32px; }
+    #chat #conversa .mensagem-container #avatar-mensagem {
+      float: left; }
+    #chat #conversa .mensagem-container #avatar-resposta {
+      float: right; }
     #chat #conversa .mensagem-container .avatar {
-      float: left;
       padding-top: 4px;
       vertical-align: super;
       display: inline-block; }
       #chat #conversa .mensagem-container .avatar img {
         width: 24px; }
+    #chat #conversa .mensagem-container #mensagem {
+      text-align: left; }
+    #chat #conversa .mensagem-container #resposta {
+      text-align: right; }
     #chat #conversa .mensagem-container .texto {
       width: 90%;
       display: inline-block;
