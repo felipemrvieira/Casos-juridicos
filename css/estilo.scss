@@ -133,6 +133,11 @@ body::scrollbar {
 
 
     }
+
+    @media screen and (max-device-width: 700px) {
+      #video{display: none;}
+    }
+
     #conteudo{
         z-index: 1000;
         margin-top: 125px;
@@ -155,6 +160,19 @@ body::scrollbar {
         }
 
     }
+
+    @media screen and (max-device-width: 700px) {
+                  #conteudo{
+                    padding: 0 15px 0 15px;
+
+                    h1{
+                      font-size: 25px;
+                    }
+                    h4{
+                      font-size: 18px;
+                    }
+                  }
+              }
         p{
           z-index: 1001;
           margin-top: auto;
@@ -181,8 +199,22 @@ body::scrollbar {
                 border-radius: 8px;
                 padding: 10px 20px;
             }
+            @media screen and (max-device-width: 700px) {
+                          a{
+                            font-size: 13px;
+                          }
+
+                      }
         }
 }
+@media screen and (max-device-width: 700px) {
+              #sec-1{
+                background-image: url("../video/Diagonal.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+              }
+
+          }
 
 #sec-2{
   background-color: $cinza-claro;
@@ -232,6 +264,12 @@ body::scrollbar {
     #app{
       width: 65%;
     }
+    @media screen and (max-device-width: 700px) {
+                #app{
+                    display: none;
+                }
+
+            }
   }
  span{
    color: #333;
@@ -250,6 +288,13 @@ body::scrollbar {
     font-size: 20px;
     padding-bottom: 12px;
   }
+
+  @media screen and (max-device-width: 700px) {
+                p{
+                    padding-bottom: 30px;
+                }
+
+            }
 }
 
 #sec-5{
@@ -269,7 +314,6 @@ body::scrollbar {
   #botao{
       padding-top: 20px;
       a{
-          width: 70%;
           color: $laranja-claro;
           font-size: 24px;
           background-color: transparent;
@@ -277,6 +321,12 @@ body::scrollbar {
           border-radius: 8px;
           padding: 10px 20px;
       }
+      @media screen and (max-device-width: 700px) {
+                a{
+                    font-size: 18px;
+                }
+
+            }
   }
 }
 
@@ -301,6 +351,13 @@ body::scrollbar {
       text-decoration: underline;
     }
   }
+
+  @media screen and (max-device-width: 700px) {
+                p{
+                    padding-bottom: 30px;
+                }
+
+            }
 }
 
 #sec-7{

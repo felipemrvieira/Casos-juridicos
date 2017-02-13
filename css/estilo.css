@@ -88,6 +88,9 @@ body::scrollbar {
       bottom: 0; }
     #sec-1 #video .video-container video.fillWidth {
       width: 100%; }
+  @media screen and (max-device-width: 700px) {
+    #sec-1 #video {
+      display: none; } }
   #sec-1 #conteudo {
     z-index: 1000;
     margin-top: 125px; }
@@ -102,6 +105,13 @@ body::scrollbar {
       color: white;
       text-align: center;
       font-size: 26px; }
+  @media screen and (max-device-width: 700px) {
+    #sec-1 #conteudo {
+      padding: 0 15px 0 15px; }
+      #sec-1 #conteudo h1 {
+        font-size: 25px; }
+      #sec-1 #conteudo h4 {
+        font-size: 18px; } }
   #sec-1 p {
     z-index: 1001;
     margin-top: auto;
@@ -123,7 +133,15 @@ body::scrollbar {
       border-color: white;
       border-radius: 8px;
       padding: 10px 20px; }
+    @media screen and (max-device-width: 700px) {
+      #sec-1 #botao a {
+        font-size: 13px; } }
 
+@media screen and (max-device-width: 700px) {
+  #sec-1 {
+    background-image: url("../video/Diagonal.jpg");
+    background-size: cover;
+    background-repeat: no-repeat; } }
 #sec-2 {
   background-color: #fbfbfb;
   padding-bottom: 50px; }
@@ -154,6 +172,9 @@ body::scrollbar {
     top: -125px; }
     #sec-4 #app-container #app {
       width: 65%; }
+    @media screen and (max-device-width: 700px) {
+      #sec-4 #app-container #app {
+        display: none; } }
   #sec-4 span {
     color: #333;
     margin-right: 10px; }
@@ -166,6 +187,9 @@ body::scrollbar {
     font-weight: bold;
     font-size: 20px;
     padding-bottom: 12px; }
+  @media screen and (max-device-width: 700px) {
+    #sec-4 p {
+      padding-bottom: 30px; } }
 
 #sec-5 {
   padding: 20px 32px 50px 32px; }
@@ -179,13 +203,15 @@ body::scrollbar {
   #sec-5 #botao {
     padding-top: 20px; }
     #sec-5 #botao a {
-      width: 70%;
       color: #e04a14;
       font-size: 24px;
       background-color: transparent;
       border-color: #b71d19;
       border-radius: 8px;
       padding: 10px 20px; }
+    @media screen and (max-device-width: 700px) {
+      #sec-5 #botao a {
+        font-size: 18px; } }
 
 #sec-6 {
   background-color: #fbfbfb;
@@ -201,6 +227,9 @@ body::scrollbar {
     text-align: justify; }
     #sec-6 p a {
       text-decoration: underline; }
+  @media screen and (max-device-width: 700px) {
+    #sec-6 p {
+      padding-bottom: 30px; } }
 
 #sec-7 {
   height: 500px;
