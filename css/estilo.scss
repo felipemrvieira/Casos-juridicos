@@ -8,26 +8,34 @@
     src: url('fonts/roboto/Roboto-Thin.ttf') format('truetype');
   }
 
+  @font-face {
+      font-family: 'Montserrat-Bold';
+      src: url('fonts/Montserrat-Bold.ttf') format('truetype');
+    }
+
+
   .option {
       -webkit-animation-duration: 2s;
       -webkit-animation-delay: 4s;
       animation-duration: 2s;
       animation-delay: 4s;
-
   }
 
-
-$cinza-claro: #f2f2f2;
+$cinza-claro: #fbfbfb;
 $laranja-claro: #e04a14;
 $laranja-escuro: #b71d19;
 
-@mixin degrade(){
+@mixin degrade-oficial(){
   background: #b71d29;
   background: -moz-linear-gradient(45deg,  #b71d19 2%, #bf1c19 79%, #e04a14 79%, #e04a14 100%);
   background: -webkit-linear-gradient(45deg,  #b71d19 2%, #e04a14 79%,#e04a14 79%,#e04a14 100%);
   background: linear-gradient(45deg,  #b71d19 2%,#e04a14 79%,#e04a14 79%,#e04a14 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b71d19', endColorstr='#e04a14',GradientType=1 );
 }
+@mixin degrade(){
+  background: linear-gradient(to left, #FF5F6D , #FFC371);
+}
+
 
 body{
   font-family: 'roboto';
@@ -65,9 +73,9 @@ body::scrollbar {
     align-items: center;
     justify-content: center;
 
-
+    background: #8c8c8c;
     height: 711px;
-    @include degrade();
+    //@include degrade();
 
     #video{
         /*background: url(../img/bg.jpg);
@@ -127,18 +135,23 @@ body::scrollbar {
     }
     #conteudo{
         z-index: 1000;
-        margin-top: 180px;
+        margin-top: 125px;
         img{
-
+          //width: 100%;
         }
         h1{
             color: white;
             text-align: center;
+             font-family: 'Montserrat', sans-serif;
+             font-size: 38px;
+            text-transform: uppercase;
+            font-weight: bold;
         }
 
         h4{
             color: white;
             text-align: center;
+            font-size: 26px;
         }
 
     }
@@ -158,11 +171,12 @@ body::scrollbar {
 
         #botao{
             padding-top: 20px;
+            text-align: center;
             a{
-                width: 40%;
                 background-color: transparent;
                 color: white;
-                font-size: 16px;
+                font-size: 20px;
+                text-transform: uppercase;
                 border-color: white;
                 border-radius: 8px;
                 padding: 10px 20px;
@@ -172,7 +186,7 @@ body::scrollbar {
 
 #sec-2{
   background-color: $cinza-claro;
-  padding-bottom: 40px;
+  padding-bottom: 50px;
 
 
 
@@ -187,7 +201,7 @@ body::scrollbar {
     }
 
     .ajuste-img{
-      width: 45%;
+      width: 35%;
       opacity: 0.6;
       padding: 0 0 16px 0
     }
@@ -204,11 +218,12 @@ body::scrollbar {
 }
 
 #sec-4{
-  background-color: darken($cinza-claro, 65%);
+  background-color: darken($cinza-claro, 2%);
+
 
 
   position: relative;
-  padding: 32px 32px 32px 32px;
+  padding: 65px 32px 45px 32px;
 
   #app-container{
     position: absolute;
@@ -218,7 +233,10 @@ body::scrollbar {
       width: 65%;
     }
   }
-
+ span{
+   color: #333;
+   margin-right: 10px
+ }
 
   h1{
     text-align: center;
@@ -227,8 +245,9 @@ body::scrollbar {
   }
 
   p{
-    color: white;
-    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
     padding-bottom: 12px;
   }
 }
@@ -262,11 +281,37 @@ body::scrollbar {
 }
 
 #sec-6{
+  background-color: $cinza-claro;
+  padding-bottom: 75px;
+  padding-top: 40px;
+
+  h2{
+    text-align: center;
+    margin-top: 40px;
+
+    margin-bottom: 40px;
+  }
+
+  p{
+    font-size: 18px;
+    padding: 0 20px 0 20px;
+    text-align: justify;
+
+    a{
+      text-decoration: underline;
+    }
+  }
+}
+
+#sec-7{
   height: 500px;
   @include degrade();
 
   #logo{
     padding-top: 120px;
+    img{
+      //width: 10%;
+    }
   }
 
   ul{
@@ -365,6 +410,7 @@ body::scrollbar {
 
   #form-container{
     position: fixed;
+    z-index: 10;
     bottom: 0;
     left: 0;
     right: 0;

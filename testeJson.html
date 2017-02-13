@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+    <script>
+
+
+    var data = {
+  "dates":[
+    {
+      "timeStamp": 1317596400,
+      "formattedDate": "Mon 03 October 2011"
+    },
+    {
+      "timeStamp": 1317682800,
+      "formattedDate": "Tue 04 October 2011"
+    },
+    {
+      "timeStamp": 1317855600,
+      "formattedDate": "Thu 06 October 2011"
+    }
+  ]
+};
+
+var i = 0;
+roda(i);
+roda(i);
+function roda(i){
+  for(i in data.dates) {
+       console.log(data.dates[1].timeStamp);
+       console.log(1);
+     }
+};
+
+
+
+    </script>
+  </body>
+</html>
