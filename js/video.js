@@ -22,6 +22,7 @@ function scaleVideoContainer() {
     $('.homepage-hero-module').css('height',unitHeight);
     $('#sec-1').css('height',unitHeight);
 
+
 }
 
 function initBannerVideoSize(element){

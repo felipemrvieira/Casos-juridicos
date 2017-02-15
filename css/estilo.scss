@@ -73,7 +73,7 @@ body::scrollbar {
     align-items: center;
     justify-content: center;
 
-    background: #8c8c8c;
+    background: #4e4e4e;
     height: 711px;
     //@include degrade();
 
@@ -126,9 +126,22 @@ body::scrollbar {
             position: absolute;
             z-index: 0;
             bottom: 0;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -o-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+
         }
         .video-container video.fillWidth {
-            width: 100%;
+            width: auto;
         }
 
 
@@ -190,15 +203,65 @@ body::scrollbar {
         #botao{
             padding-top: 20px;
             text-align: center;
-            a{
-                background-color: transparent;
-                color: white;
-                font-size: 20px;
-                text-transform: uppercase;
-                border-color: white;
-                border-radius: 8px;
-                padding: 10px 20px;
+
+            button {
+              max-width: 90%;
+              font-size: 20px;
+              text-align: center;
+              color: white;
+              font-family: 'Montserrat', sans-serif;
+              font-weight: bold;
+              text-transform: uppercase;
+              border-radius: 8px;
+              padding: 10px 20px;
+              position: relative;
+
+
+              border: 2px white solid;
+              border-radius: 6px;
+              text-transform: uppercase;
+              outline: 0;
+              overflow:hidden;
+              background: none;
+              z-index: 1;
+              cursor: pointer;
+              transition:         0.08s ease-in;
+              -o-transition:      0.08s ease-in;
+              -ms-transition:     0.08s ease-in;
+              -moz-transition:    0.08s ease-in;
+              -webkit-transition: 0.08s ease-in;
             }
+
+            @media screen and (max-device-width: 700px) {
+                          button{
+                            font-size: 12px;
+                          }
+
+                      }
+
+
+            .fill:hover{
+              color: #383736;
+            }
+
+            .fill:before {
+              content: "";
+              position: absolute;
+              background: white;
+              color: #383736;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              top: 100%;
+              z-index: -1;
+              -webkit-transition: top 0.09s ease-in;
+            }
+
+            .fill:hover:before {
+              top: 0;
+            }
+
+
             @media screen and (max-device-width: 700px) {
                           a{
                             font-size: 13px;
@@ -234,7 +297,7 @@ body::scrollbar {
 
     .ajuste-img{
       width: 35%;
-      opacity: 0.6;
+      // opacity: 0.6;
       padding: 0 0 16px 0
     }
 }
@@ -259,10 +322,13 @@ body::scrollbar {
 
   #app-container{
     position: absolute;
-    top: -125px;
+    top: -45px;
+    left: 0;
+    padding-left: 0;
 
     #app{
-      width: 65%;
+      width: 90%;
+      float: left;
     }
     @media screen and (max-device-width: 700px) {
                 #app{
