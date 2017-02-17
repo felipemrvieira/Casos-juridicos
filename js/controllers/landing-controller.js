@@ -23,12 +23,12 @@ angular.module('casosJuridicos').controller('LandingController', function($scope
     });
   });
 
-  $(function(){
-      $(".element").typed({
-        strings: ["^900 E nós estamos prontos para te atender com os melhores do mercado!"],
-        typeSpeed: 0
-      });
-  });
+  // $(function(){
+  //     $(".element").typed({
+  //       strings: ["^900 E nós estamos prontos para te atender com os melhores do mercado!"],
+  //       typeSpeed: 0
+  //     });
+  // });
 
 //seta o tamanho da area do video
   $(function() {

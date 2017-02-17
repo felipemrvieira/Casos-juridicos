@@ -13,6 +13,10 @@
       src: url('fonts/Montserrat-Bold.ttf') format('truetype');
     }
 
+    @font-face {
+        font-family: 'Karma';
+        src: url('fonts/Karma-Regular.ttf') format('truetype');
+      }
 
   .option {
       -webkit-animation-duration: 2s;
@@ -22,6 +26,7 @@
   }
 
 $cinza-claro: #fbfbfb;
+$cinza-escuro: #444;
 $laranja-claro: #e04a14;
 $laranja-escuro: #b71d19;
 
@@ -36,6 +41,31 @@ $laranja-escuro: #b71d19;
   background: linear-gradient(to left, #FF5F6D , #FFC371);
 }
 
+@mixin float(){
+   float: left;
+   -webkit-animation-name: Floatingx;
+   -webkit-animation-duration: 5s;
+   -webkit-animation-iteration-count: infinite;
+   -webkit-animation-timing-function: ease-in-out;
+   -moz-animation-name: Floating;
+   -moz-animation-duration: 5s;
+   -moz-animation-iteration-count: infinite;
+   -moz-animation-timing-function: ease-in-out;
+   margin-left: 30px;
+   margin-top: 5px;
+}
+
+@-webkit-keyframes Floatingx{
+       from {-webkit-transform:translate(0, 0px);}
+       65% {-webkit-transform:translate(0, 7px);}
+       to {-webkit-transform: translate(0, -0px);    }
+   }
+
+   @-moz-keyframes Floating{
+       from {-moz-transform:translate(0, 0px);}
+       65% {-moz-transform:translate(0, 7px);}
+       to {-moz-transform: translate(0, -0px);}
+   }
 
 body{
   font-family: 'roboto';
@@ -154,6 +184,17 @@ body::scrollbar {
     #conteudo{
         z-index: 1000;
         margin-top: 125px;
+
+        .divisor{
+          height: 2px;
+          width: 300px;
+          margin: 0 auto;
+          display: block;
+          overflow: hidden;
+          margin-top: 24px;
+          margin-bottom: 24px;
+          background-color: #ffffff;
+        }
         img{
           //width: 100%;
         }
@@ -170,6 +211,7 @@ body::scrollbar {
             color: white;
             text-align: center;
             font-size: 26px;
+            font-family: 'Karma';
         }
 
     }
@@ -196,7 +238,13 @@ body::scrollbar {
           font-size: 16px;
 
           a{
-            color: white;
+            @include float();
+            cursor: pointer;
+            img{
+              cursor: pointer;
+              width: 70px;
+              height: 70px;
+            }
           }
         }
 
@@ -212,24 +260,23 @@ body::scrollbar {
               font-family: 'Montserrat', sans-serif;
               font-weight: bold;
               text-transform: uppercase;
-              border-radius: 8px;
+              border-radius: 0px;
               padding: 10px 20px;
               position: relative;
 
 
               border: 2px white solid;
-              border-radius: 6px;
               text-transform: uppercase;
               outline: 0;
               overflow:hidden;
               background: none;
               z-index: 1;
               cursor: pointer;
-              transition:         0.08s ease-in;
-              -o-transition:      0.08s ease-in;
-              -ms-transition:     0.08s ease-in;
-              -moz-transition:    0.08s ease-in;
-              -webkit-transition: 0.08s ease-in;
+              transition:         0.2s ease-in;
+              -o-transition:      0.2s ease-in;
+              -ms-transition:     0.2s ease-in;
+              -moz-transition:    0.2s ease-in;
+              -webkit-transition: 0.2s ease-in;
             }
 
             @media screen and (max-device-width: 700px) {
@@ -254,12 +301,14 @@ body::scrollbar {
               right: 0;
               top: 100%;
               z-index: -1;
-              -webkit-transition: top 0.09s ease-in;
+              -webkit-transition: top 0.2s ease-in;
             }
 
             .fill:hover:before {
               top: 0;
             }
+
+
 
 
             @media screen and (max-device-width: 700px) {
@@ -286,6 +335,9 @@ body::scrollbar {
 
 
     h2{
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      color: $cinza-escuro;
       text-align: center;
       padding: 32px 0 42px 0;
       margin: 0;
@@ -293,6 +345,7 @@ body::scrollbar {
 
     p{
       font-size: 20px;
+      font-family: 'Karma';
     }
 
     .ajuste-img{
@@ -306,6 +359,9 @@ body::scrollbar {
   padding-bottom: 35px;
 
   h1{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: $cinza-escuro;
     text-align: center;
     padding: 32px 0 42px 0;
     margin: 0;
@@ -327,7 +383,7 @@ body::scrollbar {
     padding-left: 0;
 
     #app{
-      width: 90%;
+      width: 75%;
       float: left;
     }
     @media screen and (max-device-width: 700px) {
@@ -343,13 +399,17 @@ body::scrollbar {
  }
 
   h1{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: $cinza-escuro;
     text-align: center;
     padding: 32px 0 42px 0;
     margin: 0;
   }
 
   p{
-    color: black;
+    color: $cinza-escuro;
+    font-family: 'Karma';
     font-weight: bold;
     font-size: 20px;
     padding-bottom: 12px;
@@ -367,7 +427,10 @@ body::scrollbar {
   padding: 20px 32px 50px 32px;
 
   h1{
-    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: left;
+    color: $cinza-escuro;
     padding: 32px 0 24px 0;
     margin: 0;
   }
@@ -375,16 +438,19 @@ body::scrollbar {
   p{
     text-align: center;
     font-size: 18px;
+    font-family: 'Karma';
+
   }
 
   #botao{
       padding-top: 20px;
       a{
           color: $laranja-claro;
-          font-size: 24px;
+          font-family: 'Karma';
+          font-size: 30px;
           background-color: transparent;
           border-color: $laranja-escuro;
-          border-radius: 8px;
+          border-radius: 0px;
           padding: 10px 20px;
       }
       @media screen and (max-device-width: 700px) {
@@ -403,15 +469,19 @@ body::scrollbar {
 
   h2{
     text-align: center;
+    text-transform: uppercase;
     margin-top: 40px;
-
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 40px;
+    color: $cinza-escuro;
   }
 
   p{
     font-size: 18px;
     padding: 0 20px 0 20px;
-    text-align: justify;
+    text-align: left;
+    font-family: 'Karma';
+
 
     a{
       text-decoration: underline;
@@ -442,6 +512,7 @@ body::scrollbar {
     padding-top: 32px;
     li{
       font-size: 20px;
+      font-family: 'Karma';
       color: white;
       padding-right: 32px;
       display: inline-block;
