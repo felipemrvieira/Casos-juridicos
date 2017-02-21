@@ -1,4 +1,4 @@
-angular.module('casosJuridicos').controller('LandingController', function($scope, $sce){
+angular.module('casosJuridicos').controller('LandingController', function($scope, $sce, $location){
   $scope.usuario = {
       nome : 'Leão',
       url : 'http://www.fundosanimais.com/Minis/leoes.jpg'
@@ -7,6 +7,10 @@ angular.module('casosJuridicos').controller('LandingController', function($scope
   	{src: $sce.trustAsResourceUrl("video/Diagonal.mp4"), type: "video/mp4"},
   	{src: $sce.trustAsResourceUrl("video/Diagonal.webm"), type: "video/webm"}
   ];
+
+  $scope.goChat = function (){
+    $location.path( '/chat' );
+};
 
   $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {

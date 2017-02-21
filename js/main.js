@@ -9,7 +9,7 @@ angular.module('casosJuridicos',['ngRoute']).config(function($routeProvider, $lo
 
         $routeProvider.when('/chat', {
             templateUrl: 'partials/chat.html',
-            controller: 'LandingController'
+            controller: 'ChatController'
         });
 
         $routeProvider.otherwise({redirectTo: '/'});

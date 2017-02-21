@@ -29,6 +29,8 @@ $cinza-claro: #fbfbfb;
 $cinza-escuro: #444;
 $laranja-claro: #e04a14;
 $laranja-escuro: #b71d19;
+$pastel-escuro: #FF5F6D;
+$pastel-claro: #FFC371;
 
 @mixin degrade-oficial(){
   background: #b71d29;
@@ -343,16 +345,22 @@ body::scrollbar {
       margin: 0;
     }
 
-    p{
-      font-size: 20px;
-      font-family: 'Karma';
-    }
 
-    .ajuste-img{
-      width: 35%;
-      // opacity: 0.6;
-      padding: 0 0 16px 0
+    .sub-sec{
+      transition: all .2s ease-in-out;
+      p{
+        font-size: 20px;
+        font-family: 'Karma';
+      }
+
+      .ajuste-img{
+        width: 35%;
+        // opacity: 0.6;
+        padding: 0 0 16px 0
+      }
     }
+    .sub-sec:hover{
+-webkit-filter: grayscale(10%);    }
 }
 
 #sec-3{
@@ -426,6 +434,7 @@ body::scrollbar {
 #sec-5{
   padding: 20px 32px 50px 32px;
 
+
   h1{
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
@@ -444,22 +453,72 @@ body::scrollbar {
 
   #botao{
       padding-top: 20px;
-      a{
-          color: $laranja-claro;
-          font-family: 'Karma';
-          font-size: 30px;
-          background-color: transparent;
-          border-color: $laranja-escuro;
-          border-radius: 0px;
-          padding: 10px 20px;
+      button {
+        max-width: 90%;
+        font-size: 20px;
+        color: $pastel-escuro;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 0px;
+        padding: 10px 20px;
+        position: relative;
+
+
+        border: 2px $pastel-escuro solid;
+        text-transform: uppercase;
+        outline: 0;
+        overflow:hidden;
+        background: none;
+        z-index: 1;
+        cursor: pointer;
+        transition:         0.2s ease-in;
+        -o-transition:      0.2s ease-in;
+        -ms-transition:     0.2s ease-in;
+        -moz-transition:    0.2s ease-in;
+        -webkit-transition: 0.2s ease-in;
       }
+
       @media screen and (max-device-width: 700px) {
-                a{
-                    font-size: 18px;
+                    button{
+                      font-size: 12px;
+                    }
+
                 }
 
-            }
+
+      .fill:hover{
+        color: white;
+      }
+
+      .fill:before {
+        content: "";
+        position: absolute;
+        background: $pastel-escuro;
+        color: $pastel-claro;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 100%;
+        z-index: -1;
+        -webkit-transition: top 0.2s ease-in;
+      }
+
+      .fill:hover:before {
+        top: 0;
+      }
+
+
+
+
+      @media screen and (max-device-width: 700px) {
+                    a{
+                      font-size: 13px;
+                    }
+
+                }
   }
+
 }
 
 #sec-6{
@@ -525,7 +584,7 @@ body::scrollbar {
 
   #social{
     margin-top: 0;
-    padding-top: 0;
+    padding-top: 12px;
   }
 
 }
@@ -553,7 +612,8 @@ body::scrollbar {
       p{
         display: inline-block;
         margin-bottom: 0;
-        font-size: 18px;
+        font-size: 24px;
+        font-family: 'Montserrat-Bold';
       }
     }
   }
@@ -583,6 +643,10 @@ body::scrollbar {
 
       #mensagem{
         text-align: left;
+        font-family: 'Karma';
+        color: #636363;
+        height: 40px;
+        line-height: 40px;
       }
 
       #resposta{
