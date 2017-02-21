@@ -136,14 +136,16 @@ body::scrollbar {
       color: white;
       text-align: center;
       font-family: 'Montserrat', sans-serif;
-      font-size: 38px;
-      text-transform: uppercase;
+      font-size: 60px;
       font-weight: bold; }
     #sec-1 #conteudo h4 {
-      color: white;
+      font-family: 'Karma';
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 28px;
       text-align: center;
-      font-size: 26px;
-      font-family: 'Karma'; }
+      letter-spacing: .5px;
+      color: #fff; }
   @media screen and (max-device-width: 700px) {
     #sec-1 #conteudo {
       padding: 0 15px 0 15px; }
@@ -234,7 +236,7 @@ body::scrollbar {
   padding-bottom: 50px; }
   #sec-2 h2 {
     font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
+    font-weight: 700;
     color: #444;
     text-align: center;
     padding: 32px 0 42px 0;
@@ -254,7 +256,7 @@ body::scrollbar {
   padding-bottom: 35px; }
   #sec-3 h1 {
     font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
+    font-weight: 700;
     color: #444;
     text-align: center;
     padding: 32px 0 42px 0;
@@ -299,7 +301,7 @@ body::scrollbar {
   padding: 20px 32px 50px 32px; }
   #sec-5 h1 {
     font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
+    font-weight: 700;
     text-align: left;
     color: #444;
     padding: 32px 0 24px 0;
@@ -360,7 +362,7 @@ body::scrollbar {
   padding-top: 40px; }
   #sec-6 h2 {
     text-align: center;
-    text-transform: uppercase;
+    font-weight: 700;
     margin-top: 40px;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 40px;
@@ -438,6 +440,8 @@ body::scrollbar {
       color: #636363;
       height: 40px;
       line-height: 40px; }
+      #chat #conversa .mensagem-container #mensagem p {
+        font-size: 24px; }
     #chat #conversa .mensagem-container #resposta {
       text-align: right; }
     #chat #conversa .mensagem-container .texto {
