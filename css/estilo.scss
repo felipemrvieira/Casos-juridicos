@@ -246,8 +246,8 @@ body::scrollbar {
             cursor: pointer;
             img{
               cursor: pointer;
-              width: 70px;
-              height: 70px;
+              width: 80px;
+              height: 80px;
             }
           }
         }
@@ -589,7 +589,36 @@ body::scrollbar {
     padding-top: 12px;
   }
 
+  #modal{
+    .modal-content{
+      border-radius: 0;
+      border: 0;
+    }
+
+    .modal-header{
+      border-bottom: 0;
+
+      .close{
+        font-size: 40px;
+        padding-right: 10px;
+      }
+    }
+
+    .modal-body{
+      padding: 10px 55px 30px 55px;
+      p{
+        font-size: 18px;
+        font-family: 'Karma';
+        color: #636363;
+
+
+      }
+    }
+  }
+
 }
+
+// PAGINA DO CHAT
 #chat{
 
 
@@ -650,7 +679,7 @@ body::scrollbar {
         height: 40px;
         line-height: 40px;
         p{
-          font-size: 24px;
+          font-size: 22px;
         }
       }
 

@@ -176,8 +176,8 @@ body::scrollbar {
       cursor: pointer; }
       #sec-1 p a img {
         cursor: pointer;
-        width: 70px;
-        height: 70px; }
+        width: 80px;
+        height: 80px; }
   #sec-1 #botao {
     padding-top: 20px;
     text-align: center; }
@@ -398,6 +398,20 @@ body::scrollbar {
   #sec-7 #social {
     margin-top: 0;
     padding-top: 12px; }
+  #sec-7 #modal .modal-content {
+    border-radius: 0;
+    border: 0; }
+  #sec-7 #modal .modal-header {
+    border-bottom: 0; }
+    #sec-7 #modal .modal-header .close {
+      font-size: 40px;
+      padding-right: 10px; }
+  #sec-7 #modal .modal-body {
+    padding: 10px 55px 30px 55px; }
+    #sec-7 #modal .modal-body p {
+      font-size: 18px;
+      font-family: 'Karma';
+      color: #636363; }
 
 #chat #header {
   background: linear-gradient(to left, #FF5F6D, #FFC371);
@@ -441,7 +455,7 @@ body::scrollbar {
       height: 40px;
       line-height: 40px; }
       #chat #conversa .mensagem-container #mensagem p {
-        font-size: 24px; }
+        font-size: 22px; }
     #chat #conversa .mensagem-container #resposta {
       text-align: right; }
     #chat #conversa .mensagem-container .texto {
