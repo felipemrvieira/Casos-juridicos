@@ -31,9 +31,6 @@
     -moz-transform: translate(0, 7px); }
   to {
     -moz-transform: translate(0, 0px); } }
-body {
-  font-family: 'roboto'; }
-
 body::-webkit-scrollbar {
   display: none; }
 
@@ -459,7 +456,24 @@ body::scrollbar {
       #chat #conversa .mensagem-container #mensagem p {
         font-size: 22px; }
     #chat #conversa .mensagem-container #resposta {
-      text-align: right; }
+      text-align: right;
+      font-family: 'Karma';
+      color: #636363;
+      height: 40px;
+      line-height: 40px; }
+      #chat #conversa .mensagem-container #resposta p {
+        font-size: 22px; }
+    #chat #conversa .mensagem-container #avatar-resposta {
+      height: 40px; }
+      #chat #conversa .mensagem-container #avatar-resposta span {
+        font-size: 20px;
+        padding: 9px 16px;
+        border-radius: 8px;
+        background-color: #FFC371;
+        color: white;
+        transition: background-color 0.5s ease; }
+        #chat #conversa .mensagem-container #avatar-resposta span:hover {
+          background-color: #FF5F6D; }
     #chat #conversa .mensagem-container .texto {
       width: 90%;
       display: inline-block;
@@ -483,16 +497,22 @@ body::scrollbar {
       background-color: #fbfbfb;
       border: none;
       box-shadow: none;
-      font-size: 30px; }
+      font-size: 24px;
+      font-family: 'Karma'; }
   #chat #form-container .input-botao-container {
     width: 15%; }
     #chat #form-container .input-botao-container #botao-enviar {
       width: 100%;
       color: white;
+      font-family: 'Karma';
       font-size: 24px;
-      background-color: #e04a14;
-      border-color: #e04a14;
-      border-radius: 8px;
-      padding: 10px 20px; }
+      line-height: 24px;
+      background-color: #FF5F6D;
+      border-radius: 0;
+      border: 0;
+      padding: 19px 20px 15px 20px;
+      transition: 0.3s ease; }
+      #chat #form-container .input-botao-container #botao-enviar:hover {
+        opacity: 0.8; }
 
 /*# sourceMappingURL=estilo.css.map */

@@ -30,12 +30,12 @@
 
       <!--TEMPLATE RESPOSTA-->
       <script id="hidden-template-resposta" type="text/x-custom-template">
-      <div class="txt-right mensagem-container animated bounceInUp">
+      <div class="txt-right mensagem-container animated">
         <div id="resposta" class="texto">
           <p id="txt"></p>
         </div>
         <div id="avatar-resposta" class="avatar">
-          <img src="img/logo-avatar.png" alt="">
+          <span id="avatar-cliente"></span>
         </div>
       </div>
       </script>
@@ -45,19 +45,16 @@
 
 
     <!-- FORM -->
-    <script id="hidden-template-form" type="text/x-custom-template">
-    <div id="form-container" class="animated bounceInUp">
-      <form class="form-inline container">
+    <div id="form-container" class="animated bounceInUp" ng-hide="escondeForm">
+      <form class="form-inline container" ng-submit="enviaNome()">
         <div class="input-texto-container form-group">
-          <input type="text" class="form-control" id="input-texto" placeholder="digite aqui">
+          <input type="text" class="form-control" id="input-texto" placeholder="digite aqui" ng-model="usuario.nome">
         </div>
         <div class="input-botao-container form-group">
           <button type="submit" id="botao-enviar" class="btn btn-default">Enviar</button>
         </div>
       </form>
     </div>
-    </script>
-
     <!-- FORM -->
 
 

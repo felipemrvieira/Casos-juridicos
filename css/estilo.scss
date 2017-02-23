@@ -70,7 +70,6 @@ $pastel-claro: #FFC371;
    }
 
 body{
-  font-family: 'roboto';
 }
 
 body::-webkit-scrollbar {
@@ -688,6 +687,27 @@ body::scrollbar {
 
       #resposta{
         text-align: right;
+        font-family: 'Karma';
+        color: #636363;
+        height: 40px;
+        line-height: 40px;
+        p{
+          font-size: 22px;
+        }
+      }
+      #avatar-resposta{
+        height: 40px;
+        span{
+          font-size: 20px;
+          padding: 9px 16px;
+          border-radius: 8px;
+          background-color: $pastel-claro;
+          color: white;
+          transition: background-color 0.5s ease;
+          &:hover{
+            background-color: $pastel-escuro;
+          }
+        }
       }
 
       .texto{
@@ -712,6 +732,7 @@ body::scrollbar {
     padding: 40px 25px;
     background-color: $cinza-claro;
 
+
     .input-texto-container{
       width: 80%;
       #input-texto{
@@ -719,7 +740,9 @@ body::scrollbar {
         background-color: $cinza-claro;
         border: none;
         box-shadow: none;
-        font-size: 30px;
+        font-size: 24px;
+        font-family: 'Karma';
+
       }
     }
 
@@ -728,11 +751,19 @@ body::scrollbar {
       #botao-enviar{
         width: 100%;
         color: white;
+        font-family: 'Karma';
         font-size: 24px;
-        background-color: $laranja-claro;
-        border-color: $laranja-claro;
-        border-radius: 8px;
-        padding: 10px 20px;
+        line-height: 24px;
+        background-color: $pastel-escuro;
+        border-radius: 0;
+        border: 0;
+        padding: 19px 20px 15px 20px;
+        transition: 0.3s ease;
+
+        &:hover{
+          opacity: 0.8;
+
+        }
       }
     }
 
