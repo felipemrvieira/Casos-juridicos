@@ -392,9 +392,11 @@ body::scrollbar {
       color: white;
       padding-right: 32px;
       display: inline-block;
-      text-align: center; }
+      text-align: center;
+      cursor: pointer; }
       #sec-7 ul li a {
-        color: white; }
+        color: white;
+        cursor: pointer; }
   #sec-7 #social {
     margin-top: 0;
     padding-top: 12px; }
