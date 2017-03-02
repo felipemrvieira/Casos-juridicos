@@ -1,7 +1,7 @@
 <div id="chat">
-  <div id="intro" class="animated ">
-    <div class="col-md-5">
-      <img class="img-responsive" src="img/Eloisa.png" alt="">
+  <div id="intro" class="animated">
+    <div id="intro-avatar" class="col-md-5">
+      <img class="img-responsive animated bounceIn" src="img/Eloisa.png">
     </div>
     <div id="intro-msg" class="col-md-7">
 
@@ -17,10 +17,10 @@
         <p class="center-block">Fale com a Eloisa!</p>
         <div id="voltar">
           <i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" style="opacity:0"></i>
-          <img src="img/Eloisa.png" alt="">
         </div>
       </div>
-      <img id="teste" class="img-circle hide animated" src="img/Eloisa.png" alt="">
+      <div id="avatar-eloisa" class="img-circle hide animated">
+      </div>
     </div>
 
     <div id="conversa" class=" ">
@@ -64,7 +64,7 @@
           required
           class="form-control"
           id="input-texto"
-          placeholder="digite aqui"
+          placeholder="digite seu nome aqui!"
           ng-model="chatCtrl.usuario.nome">
 
         </div>
@@ -76,7 +76,37 @@
     </div>
     <!-- FORM -->
 
+<script>
+  var divHover = null,
+  windowClick = false;
 
+$(function(){
+$(window).mousedown(function(){
+  windowClick = true;
+});
+
+$(window).mouseup(function(){
+  windowClick = false;
+});
+
+$('#teste').hover(function(){
+  if(divHover === null){
+    divHover = $(this);
+  }
+}, function(){
+  if(windowClick === false){
+    divHover = null;
+    $(this).css('z-index', '0');
+  }
+});
+
+$(window).mousemove(function(e){
+  if(windowClick === true && divHover != null){
+    divHover.css({ top: e.clientY - divHover.height() / 2 + 'px', left: e.clientX - divHover.width() / 2 + 'px', position: 'absolute', zIndex: '1' });
+  }
+});
+})
+</script>
 
   </div>
 </div>

@@ -13,7 +13,7 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
 
 
   var mensagem = ["Olá, eu sou Eloisa! :)", -20,
-  "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar!",-90,
+  "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar! ^2000",-90,
   "Antes de começarmos, como posso te chamar?",-40,
   "formNome",-70,
 
@@ -30,25 +30,26 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
 
   $(function(){
       $("#intro-msg").typed({
-        strings: ["^1000 Olá, eu me chamo Eloisa!", "Sou a assistente virtual que vai te atender.",
-         "Fique tranquilo, suas informações ficarão em sigilo! ^2000"],
+        strings: ["^1500 Olá, eu me chamo Eloisa! ^2000", "Sou a assistente virtual que vai te atender.^2000",
+         "Fique tranquilo, suas informações ficarão em sigilo! ^3000"],
         typeSpeed: 0,
         backSpeed: -40,
         callback: function() {
           $("#intro").addClass("fadeOutUpBig");
-          $("#teste").removeClass("hide");
-          $("#teste").addClass("bounceInUp");
-
-
+          $("#avatar-eloisa").removeClass("hide");
+          $("#avatar-eloisa").addClass("bounceInUp");
+          enviaMsg();
         }
       });
   });
 
 
-  // var enviaMsg = $interval(function(){
-  //     validaMsg();
-  //     time = 5000;
-  //   }, time, 5);
+    var enviaMsg = function(){
+      $interval(function(){
+        validaMsg();
+        time = 5000;
+      }, time, 5);
+    }
 
     function digita(mensagem, tempo){
       $("#txt:last-child").typed({
@@ -82,6 +83,37 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
       self.usuario.letra = self.usuario.nome.substring(0, 1);
       return self.usuario.letra
     }
+
+
+    var divHover = null,
+      windowClick = false;
+
+  $(function(){
+    $(window).mousedown(function(){
+      windowClick = true;
+    });
+
+    $(window).mouseup(function(){
+      windowClick = false;
+    });
+
+    $('#avatar-eloisa').hover(function(){
+      if(divHover === null){
+        divHover = $(this);
+      }
+    }, function(){
+      if(windowClick === false){
+        divHover = null;
+        $(this).css('z-index', '0');
+      }
+    });
+
+    $(window).mousemove(function(e){
+      if(windowClick === true && divHover != null){
+        divHover.css({ top: e.clientY - divHover.height() / 2 + 'px', left: e.clientX - divHover.width() / 2 + 'px', position: 'absolute', zIndex: '1' });
+      }
+    });
+  })
 
 
 
