@@ -1,16 +1,26 @@
 <div id="chat">
+  <div id="intro" class="animated ">
+    <div class="col-md-5">
+      <img class="img-responsive" src="img/Eloisa.png" alt="">
+    </div>
+    <div id="intro-msg" class="col-md-7">
+
+    </div>
+  </div>
   <div class="container-fluid">
 
     <div id="header">
       <div class="container">
         <div id="voltar">
-          <a href="index.html"> <i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i> </a>
+          <a href="index.html"> <i class="fa fa-arrow-circle-left fa-3x" aria-hidden="true"></i> </a>
         </div>
         <p class="center-block">Fale com a Eloisa!</p>
         <div id="voltar">
           <i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" style="opacity:0"></i>
+          <img src="img/Eloisa.png" alt="">
         </div>
       </div>
+      <img id="teste" class="img-circle hide animated" src="img/Eloisa.png" alt="">
     </div>
 
     <div id="conversa" class=" ">
@@ -45,11 +55,20 @@
 
 
     <!-- FORM -->
-    <div id="form-container" class="animated bounceInUp" ng-hide="escondeForm">
-      <form class="form-inline container" ng-submit="enviaNome()">
+    <div id="form-container" class="animated bounceInUp" ng-hide="chatCtrl.escondeForm">
+      <form name="nomeUsuario" class="form-inline container" ng-submit="chatCtrl.enviaNome()">
         <div class="input-texto-container form-group">
-          <input type="text" class="form-control" id="input-texto" placeholder="digite aqui" ng-model="usuario.nome">
+          <input
+          type="text"
+          name="nome"
+          required
+          class="form-control"
+          id="input-texto"
+          placeholder="digite aqui"
+          ng-model="chatCtrl.usuario.nome">
+
         </div>
+
         <div class="input-botao-container form-group">
           <button type="submit" id="botao-enviar" class="btn btn-default">Enviar</button>
         </div>

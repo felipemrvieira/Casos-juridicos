@@ -412,6 +412,16 @@ body::scrollbar {
       font-family: 'Karma';
       color: #636363; }
 
+#chat #intro {
+  padding: 132px 64px 132px 64px;
+  position: absolute;
+  background: linear-gradient(to left, #FF5F6D, #FFC371);
+  height: 100%;
+  width: 100%; }
+  #chat #intro #intro-msg {
+    font-size: 64px;
+    color: white;
+    font-family: 'Montserrat-Bold'; }
 #chat #header {
   background: linear-gradient(to left, #FF5F6D, #FFC371);
   color: white;
@@ -423,15 +433,27 @@ body::scrollbar {
     display: flex;
     flex-direction: row; }
     #chat #header .container #voltar {
+      align-self: center;
       color: white;
       display: inline-block; }
       #chat #header .container #voltar a {
         color: white; }
+    #chat #header .container img {
+      width: 50px; }
     #chat #header .container p {
+      align-self: center;
       display: inline-block;
       margin-bottom: 0;
-      font-size: 24px;
+      font-size: 32px;
       font-family: 'Montserrat-Bold'; }
+  #chat #header #teste {
+    -webkit-box-shadow: 6px 6px 18px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 6px 18px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 6px 18px -4px rgba(0, 0, 0, 0.75);
+    width: 150px;
+    position: absolute;
+    left: 100px;
+    top: 70px; }
 #chat #conversa {
   padding: 10px 250px 200px 250px;
   overflow-y: auto; }

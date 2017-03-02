@@ -623,6 +623,21 @@ body::scrollbar {
 // PAGINA DO CHAT
 #chat{
 
+  #intro{
+    padding: 132px 64px 132px 64px;
+    position: absolute;
+    @include degrade();
+    height: 100%;
+    width: 100%;
+
+    #intro-msg{
+      font-size: 64px;
+      color: white;
+      font-family: 'Montserrat-Bold';
+
+    }
+  }
+
 
   #header{
     @include degrade();
@@ -637,17 +652,33 @@ body::scrollbar {
       flex-direction: row;
 
       #voltar{
+        align-self: center;
         color: white;
         display: inline-block;
         a{color: white;}
       }
+      img{
+        width: 50px;
+
+      }
 
       p{
+        align-self: center;
         display: inline-block;
         margin-bottom: 0;
-        font-size: 24px;
+        font-size: 32px;
         font-family: 'Montserrat-Bold';
       }
+    }
+
+    #teste{
+      -webkit-box-shadow: 6px 6px 18px -4px rgba(0,0,0,0.75);
+      -moz-box-shadow: 6px 6px 18px -4px rgba(0,0,0,0.75);
+      box-shadow: 6px 6px 18px -4px rgba(0,0,0,0.75);
+      width: 150px;
+      position: absolute;
+      left: 100px;
+      top: 70px;
     }
   }
 

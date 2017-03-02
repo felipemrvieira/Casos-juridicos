@@ -1,11 +1,15 @@
-angular.module('casosJuridicos').controller('ChatController', function($scope, $location, $interval){
-  $scope.usuario = {
-      nome : 'Felipe',
-      url : 'http://www.fundosanimais.com/Minis/leoes.jpg'
+angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$interval', '$window', function($location, $interval, $window){
+
+  var self = this;
+
+  self.usuario = {
+      nome : '',
+      tipo : '',
+      email: '',
+      telefone: ''
   };
 
-  $scope.escondeForm = true;
-
+  self.escondeForm = true;
 
 
   var mensagem = ["Olá, eu sou Eloisa! :)", -20,
@@ -24,10 +28,27 @@ angular.module('casosJuridicos').controller('ChatController', function($scope, $
   var templateForm = $('#hidden-template-form').html();
 
 
-  var enviaMsg = $interval(function(){
-      validaMsg();
-      time = 5000;
-    }, time, 5);
+  $(function(){
+      $("#intro-msg").typed({
+        strings: ["^1000 Olá, eu me chamo Eloisa!", "Sou a assistente virtual que vai te atender.",
+         "Fique tranquilo, suas informações ficarão em sigilo! ^2000"],
+        typeSpeed: 0,
+        backSpeed: -40,
+        callback: function() {
+          $("#intro").addClass("fadeOutUpBig");
+          $("#teste").removeClass("hide");
+          $("#teste").addClass("bounceInUp");
+
+
+        }
+      });
+  });
+
+
+  // var enviaMsg = $interval(function(){
+  //     validaMsg();
+  //     time = 5000;
+  //   }, time, 5);
 
     function digita(mensagem, tempo){
       $("#txt:last-child").typed({
@@ -40,7 +61,7 @@ angular.module('casosJuridicos').controller('ChatController', function($scope, $
       if(mensagem[i]==="fim"){
         $interval.cancel(enviaMsg);
       }else if (mensagem[i]==="formNome") {
-        $scope.escondeForm = false;
+        self.escondeForm = false;
         $interval.cancel(enviaMsg);
       }else{
         $('#conversa').append(templateMensagem);
@@ -49,18 +70,19 @@ angular.module('casosJuridicos').controller('ChatController', function($scope, $
       }
     }
 
-    $scope.enviaNome = function(){
-      console.log("enviando " + $scope.usuario.nome);
-      $scope.escondeForm = true;
+    self.enviaNome = function(){
+      self.escondeForm = true;
       $('#conversa').append(templateResposta);
-      $('#avatar-cliente').text($scope.usuario.nome.substring(0, 1));
-      $("#txt:last-child").text("Me chamo " + $scope.usuario.nome);
+      $('#avatar-cliente').text(primeiraLetra);
+      $("#txt:last-child").text("Me chamo " + self.usuario.nome);
 
     }
 
     primeiraLetra = function(){
-      $scope.usuario.letra = $scope.usuario.nome.substring(0, 1);
-      return $scope.usuario.letra
+      self.usuario.letra = self.usuario.nome.substring(0, 1);
+      return self.usuario.letra
     }
 
-});
+
+
+}]);
