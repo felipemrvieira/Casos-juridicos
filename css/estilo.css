@@ -143,6 +143,13 @@ body::scrollbar {
       text-align: center;
       letter-spacing: .5px;
       color: #fff; }
+    #sec-1 #conteudo #balao {
+      position: relative;
+      float: right;
+      top: -130px;
+      right: -30px; }
+      #sec-1 #conteudo #balao img {
+        width: 400px; }
   @media screen and (max-device-width: 700px) {
     #sec-1 #conteudo {
       padding: 0 15px 0 15px; }

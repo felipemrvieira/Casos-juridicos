@@ -217,6 +217,20 @@ body::scrollbar {
           color: #fff;
         }
 
+        #balao{
+
+          img{
+            width: 400px;
+
+          }
+          position: relative;
+          float: right;
+          top: -130px;
+          right: -30px;
+
+
+        }
+
     }
 
     @media screen and (max-device-width: 700px) {
