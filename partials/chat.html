@@ -1,9 +1,9 @@
 <div id="chat">
   <div id="intro" class="animated">
-    <div id="intro-avatar" class="col-md-5">
+    <div id="intro-avatar" class="col-md-5 col-xs-12 col-sm-12">
       <img class="img-responsive animated bounceIn" src="img/Eloisa.png">
     </div>
-    <div id="intro-msg" class="col-md-7">
+    <div id="intro-msg" class="col-md-7 col-xs-12 col-sm-12">
 
     </div>
   </div>
@@ -54,10 +54,10 @@
 
 
 
-    <!-- FORM -->
+    <!-- FORM NOME CLIENTE-->
     <div id="form-container" class="animated bounceInUp" ng-hide="chatCtrl.escondeForm">
       <form name="nomeUsuario" class="form-inline container" ng-submit="chatCtrl.enviaNome()">
-        <div class="input-texto-container form-group">
+        <div class="input-texto-container form-group col-xs-12 ">
           <input
           type="text"
           name="nome"
@@ -69,44 +69,144 @@
 
         </div>
 
+        <div class="input-botao-container form-group col-xs-12">
+          <button type="submit" id="botao-enviar" class="btn btn-default">Enviar</button>
+        </div>
+      </form>
+    </div>
+    <!-- FORM NOME CLIENTE-->
+
+    <!-- FORM TIPO CLIENTE-->
+    <div id="form-container-tipo" class="animated bounceInUp" ng-hide="chatCtrl.escondeFormTipo">
+      <form name="tipoUsuario" class="form-inline container">
+        <div class="col-md-12">
+          <div class="input-botao-container form-group">
+            <button type="submit"
+            id="botao-enviar"
+            class="btn btn-default"
+            ng-click="chatCtrl.usuario.tipo='trabalhista'; chatCtrl.selTipo()"
+            >Trabalhista</button>
+          </div>
+          <div class="input-botao-container form-group">
+            <button type="submit"
+            id="botao-enviar"
+            class="btn btn-default"
+            ng-click="chatCtrl.usuario.tipo='pensao'; chatCtrl.selTipo()"
+            >Pensão</button>
+          </div>
+          <div class="input-botao-container form-group">
+            <button type="submit"
+            id="botao-enviar"
+            class="btn btn-default"
+            ng-click="chatCtrl.usuario.tipo='familia'; chatCtrl.selTipo()"
+            >Família</button>
+          </div>
+          <div class="input-botao-container form-group">
+            <button type="submit"
+            id="botao-enviar"
+            class="btn btn-default"
+            ng-click="chatCtrl.usuario.tipo='bancario'; chatCtrl.selTipo()"
+            >Bancário</button>
+          </div>
+        </div>
+        <div class="col-md-12">
+
+          <div class="input-botao-container form-group">
+            <button type="submit"
+            id="botao-enviar"
+            class="btn btn-default"
+            ng-click="chatCtrl.usuario.tipo='consumidor'; chatCtrl.selTipo()"
+            >Consumidor</button>
+          </div>
+          <div class="input-botao-container form-group">
+            <button type="submit"
+            id="botao-enviar"
+            class="btn btn-default"
+            ng-click="chatCtrl.usuario.tipo='inss'; chatCtrl.selTipo()"
+            >INSS</button>
+          </div>
+
+          <div class="input-botao-container form-group">
+            <button type="submit"
+            id="botao-enviar"
+            class="btn btn-default"
+            ng-click="chatCtrl.usuario.tipo='outro'; chatCtrl.selTipo()"
+            >Outro</button>
+          </div>
+
+        </div>
+
+
+      </form>
+    </div>
+    <!-- FORM TIPO CLIENTE-->
+
+
+    <!-- FORM DESCRICAO CLIENTE-->
+    <div id="form-container" class="animated bounceInUp" ng-hide="chatCtrl.escondeFormDescricao">
+      <form name="descricaoUsuario" class="form-inline container" ng-submit="chatCtrl.enviaDescricao()">
+        <div class="input-texto-container form-group">
+          <textarea
+            placeholder="Descreva seu caso!"
+
+          class="form-control"
+          rows="5"
+          required
+          id="comment"
+          ng-model="chatCtrl.usuario.descricao"
+          ></textarea>
+        </div>
+
         <div class="input-botao-container form-group">
           <button type="submit" id="botao-enviar" class="btn btn-default">Enviar</button>
         </div>
       </form>
     </div>
-    <!-- FORM -->
+    <!-- FORM DESCRICAO CLIENTE-->
 
-<script>
-  var divHover = null,
-  windowClick = false;
+    <!-- FORM EMAIL CLIENTE-->
+    <div id="form-container" class="animated bounceInUp" ng-hide="chatCtrl.escondeFormEmail">
+      <form name="emailUsuario" class="form-inline container" ng-submit="chatCtrl.enviaEmail()">
+        <div class="input-texto-container form-group">
+          <input
+          type="email"
+          name="email"
+          required
+          class="form-control"
+          id="input-texto"
+          placeholder="digite seu email aqui!"
+          ng-model="chatCtrl.usuario.email">
 
-$(function(){
-$(window).mousedown(function(){
-  windowClick = true;
-});
+        </div>
 
-$(window).mouseup(function(){
-  windowClick = false;
-});
+        <div class="input-botao-container form-group">
+          <button type="submit" id="botao-enviar" class="btn btn-default">Enviar</button>
+        </div>
+      </form>
+    </div>
+    <!-- FORM EMAIL CLIENTE-->
 
-$('#teste').hover(function(){
-  if(divHover === null){
-    divHover = $(this);
-  }
-}, function(){
-  if(windowClick === false){
-    divHover = null;
-    $(this).css('z-index', '0');
-  }
-});
+    <!-- FORM TELEFONE CLIENTE-->
+    <div id="form-container" class="animated bounceInUp" ng-hide="chatCtrl.escondeFormTelefone">
+      <form name="telefoneUsuario" class="form-inline container" ng-submit="chatCtrl.enviaTelefone()">
+        <div class="input-texto-container form-group">
+          <input
+          type="number"
+          name="telefone"
+          required
+          class="form-control"
+          id="input-texto"
+          placeholder="digite seu telefone!"
+          ng-model="chatCtrl.usuario.telefone">
 
-$(window).mousemove(function(e){
-  if(windowClick === true && divHover != null){
-    divHover.css({ top: e.clientY - divHover.height() / 2 + 'px', left: e.clientX - divHover.width() / 2 + 'px', position: 'absolute', zIndex: '1' });
-  }
-});
-})
-</script>
+        </div>
+
+        <div class="input-botao-container form-group">
+          <button type="submit" id="botao-enviar" class="btn btn-default">Enviar</button>
+        </div>
+      </form>
+    </div>
+    <!-- FORM TELEFONE CLIENTE-->
 
   </div>
 </div>
