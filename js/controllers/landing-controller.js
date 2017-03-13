@@ -3,10 +3,6 @@ angular.module('casosJuridicos').controller('LandingController', function($scope
       nome : 'Leão',
       url : 'http://www.fundosanimais.com/Minis/leoes.jpg'
   };
-  $scope.sources = [
-  	{src: $sce.trustAsResourceUrl("video/Diagonal.mp4"), type: "video/mp4"},
-  	{src: $sce.trustAsResourceUrl("video/Diagonal.webm"), type: "video/webm"}
-  ];
 
   $scope.goChat = function (){
     $location.path( '/chat' );
@@ -34,11 +30,10 @@ angular.module('casosJuridicos').controller('LandingController', function($scope
   //     });
   // });
 
-//seta o tamanho da area do video
+//seta a altura da area
   $(function() {
-      var height = $(window).height() + 5;
+      var height = $(window).height() ;
       var unitHeight = parseInt(height) + 'px';
-      $('.homepage-hero-module').css('height',unitHeight);
       $('#sec-1').css('height',unitHeight);
 
 
