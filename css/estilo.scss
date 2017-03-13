@@ -18,6 +18,11 @@
         src: url('fonts/Montserrat-Light.ttf') format('truetype');
       }
 
+      @font-face {
+          font-family: 'Lato-Regular';
+          src: url('fonts/Lato-Regular.ttf') format('truetype');
+        }
+
     @font-face {
         font-family: 'Karma';
         src: url('fonts/Karma-Regular.ttf') format('truetype');
@@ -75,6 +80,8 @@ $pastel-claro: #FFC371;
    }
 
 body{
+  background-color: #fdfdfd;
+  -webkit-font-smoothing: antialiased;
 }
 
 body::-webkit-scrollbar {
@@ -139,7 +146,7 @@ body::scrollbar {
 
     li{
       font-size: 20px;
-      font-family: 'Montserrat-Light';
+      font-family: 'Lato-Regular';
 
       &:hover{
         border-bottom: 4px solid #FF5F6D;
@@ -365,7 +372,7 @@ body::scrollbar {
       transition: all .2s ease-in-out;
       p{
         font-size: 20px;
-        font-family: 'Karma';
+        font-family: 'Lato-Regular';
       }
 
       .ajuste-img{
@@ -432,7 +439,7 @@ body::scrollbar {
 
   p{
     color: $cinza-escuro;
-    font-family: 'Karma';
+    font-family: 'Lato-Regular';
     font-weight: bold;
     font-size: 20px;
     padding-bottom: 12px;
@@ -462,7 +469,7 @@ body::scrollbar {
   p{
     text-align: center;
     font-size: 18px;
-    font-family: 'Karma';
+    font-family: 'Lato-Regular';
 
   }
 
@@ -554,7 +561,7 @@ body::scrollbar {
     font-size: 18px;
     padding: 0 20px 0 20px;
     text-align: left;
-    font-family: 'Karma';
+    font-family: 'Lato-Regular';
 
 
     a{
@@ -586,7 +593,7 @@ body::scrollbar {
     padding-top: 32px;
     li{
       font-size: 20px;
-      font-family: 'Karma';
+      font-family: 'Lato-Regular';
       color: white;
       padding-right: 32px;
       display: inline-block;
@@ -624,7 +631,7 @@ body::scrollbar {
       padding: 10px 55px 30px 55px;
       p{
         font-size: 18px;
-        font-family: 'Karma';
+        font-family: 'Lato-Regular';
         color: #636363;
 
 
@@ -636,6 +643,7 @@ body::scrollbar {
 
 // PAGINA DO CHAT
 #chat{
+
 
   @media screen and (max-device-width: 700px) {
     #intro{
@@ -660,14 +668,16 @@ body::scrollbar {
     @include degrade();
     height: 100%;
     width: 100%;
+    z-index: 10;
 
     #intro-avatar{
       align-self: center;
+
     }
 
     #intro-msg{
       align-self: center;
-      font-size: 64px;
+      font-size: 48px;
       color: white;
       font-family: 'Montserrat-Bold';
 
@@ -685,11 +695,12 @@ body::scrollbar {
 
 
   #header{
+    position: fixed;
+    width: 100%;
     @include degrade();
     color: white;
     padding-top: 28px;
     padding-bottom: 28px;
-    margin-bottom: 64px;
 
     .container{
       display: -webkit-flex;
@@ -729,8 +740,6 @@ body::scrollbar {
       -moz-box-shadow: 6px 6px 18px -4px rgba(0,0,0,0.75);
       box-shadow: 6px 6px 18px -4px rgba(0,0,0,0.75);
       transition: all 0.2s ease-out;
-
-
       height: 150px;
       width: 150px;
       line-height: 150px;
@@ -760,7 +769,7 @@ body::scrollbar {
   }
 
   #conversa{
-    padding: 10px 250px 200px 250px;
+    padding: 200px 250px 200px 250px;
     overflow-y: auto;
 
     .mensagem-container{
@@ -768,13 +777,26 @@ body::scrollbar {
 
       #avatar-mensagem{
         float: left;
+
+        #avatar-elo{
+          height: 40px;
+          font-size: 20px;
+          padding: 9px 16px;
+          border-radius: 8px;
+          background-color: $pastel-escuro;
+          color: white;
+          transition: background-color 0.5s ease;
+          &:hover{
+            background-color: $pastel-claro;
+          }
+
+        }
       }
       #avatar-resposta{
         float: right;
       }
 
       .avatar{
-        padding-top: 4px;
         img{
           width: 24px;
         }
@@ -783,26 +805,32 @@ body::scrollbar {
       }
 
       #mensagem{
+        margin-left: 10px;
+        border-radius: 0 10px 10px 10px;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+        padding: 10px 15px;
         text-align: left;
-        font-family: 'Karma';
-        color: #636363;
-        height: 40px;
-        line-height: 40px;
+        font-family: 'Lato-Regular';
+        color: #666;
+        background-color: white;
         p{
           font-size: 22px;
         }
       }
 
       #resposta{
-        text-align: right;
-        font-family: 'Karma';
-        color: #636363;
-        height: 40px;
-        line-height: 40px;
+        margin-right: 10px;
+        background-color: $pastel-claro;
+        border-radius: 10px 0 10px 10px;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+        padding: 10px 15px;
+        text-align: left;
+        font-family: 'Lato-Regular';
+        color: #666;
         p{
           font-size: 22px;
+          color: white;
         }
-
       }
 
       @media screen and (max-device-width: 700px) {
@@ -843,11 +871,10 @@ body::scrollbar {
       }
 
       .texto{
-        width: 90%;
+        max-width: 75%;
         display: inline-block;
         margin-bottom: 0;
         font-size: 24px;
-        letter-spacing: 0.1rem;
         text-align: left;
         padding: 1px 15px 0;
 
@@ -872,7 +899,7 @@ body::scrollbar {
 
         #mensagem{
           text-align: left;
-          font-family: 'Karma';
+          font-family: 'Lato-Regular';
           color: #636363;
           height: 18px;
           line-height: 18px;
@@ -905,7 +932,7 @@ body::scrollbar {
         border: none;
         box-shadow: none;
         font-size: 24px;
-        font-family: 'Karma';
+        font-family: 'Lato-Regular';
 
       }
     }
@@ -915,13 +942,13 @@ body::scrollbar {
       #botao-enviar{
         width: 100%;
         color: white;
-        font-family: 'Karma';
+        font-family: 'Lato-Regular';
         font-size: 24px;
         line-height: 24px;
         background-color: $pastel-escuro;
-        border-radius: 0;
+        border-radius: 15px;
         border: 0;
-        padding: 19px 20px 15px 20px;
+        padding: 20px;
         transition: 0.3s ease;
 
         &:hover{
@@ -934,7 +961,7 @@ body::scrollbar {
   textarea{
     width: 93%;
     border: none;
-    font-family: 'Karma';
+    font-family: 'Lato-Regular';
     font-size: 18px;
 
   }
@@ -978,7 +1005,7 @@ body::scrollbar {
     background-color: $cinza-claro;
     p{
       font-size: 24px;
-      font-family: 'Karma';
+      font-family: 'Lato-Regular';
     }
 
     .input-botao-container{
@@ -987,13 +1014,13 @@ body::scrollbar {
       #botao-enviar{
         width: 100%;
         color: white;
-        font-family: 'Karma';
+        font-family: 'Lato-Regular';
         font-size: 22px;
         line-height: 22px;
         background-color: $pastel-escuro;
-        border-radius: 0;
+        border-radius: 15px;
         border: 0;
-        padding: 28px 25px 25px 25px;
+        padding: 25px;
         transition: 0.3s ease;
 
         &:hover{

@@ -23,25 +23,23 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
   "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar! ^2000",-90,
   "Antes de começarmos, como posso te chamar? ^500",-50,
     "formNome",-70,
-  "Vou fazer mais algumas perguntas para poder entender seu caso.",-70,
-  "Selecione uma opção que mais se parece com o seu caso",-70,
+  "Prazer!",-70,
+  "Qual a cidade e estado que você mora?",-70,
+  "Para selecionarmos o melhor profissional para o seu caso, selecione a área do Direito que mais se aproxima com o seu caso.",-70,
     "formTipo",-70,
-  "Certo!",-70,
-  "Para que possamos selecionar o melhor advogado para seu caso jurídico, preciso que você o detalhe para mim! ^2500",-70,
+  "Certo, entendi.",-70,
+  "Agora preciso que conte rapidamente  o seu caso jurídico. ^2500",-70,
     "formDescricao",-70,
-  "Entendi! Estamos quase finalizando. ^2500",-70,
-  "Para encaminhar seu caso para um advogado precisaremos de algumas informações de contato.^1500",-70,
-  "Qual o seu email? ^500",-70,
+  "Bem delicado, mas iremos te ajudar. ^2500",-70,
+  "Para que você seja contactado por um advogado, precisamos do seu email. ^500",-70,
     "formEmail",-70,
-  "E o seu telefone? ^500",-70,
+  "E o telefone com DDD? ^500",-70,
     "formTelefone",-70,
   "Certo, anotei tudinho aqui! ^1000",-70,
-  "Vou analisar seu caso com calma e te encaminhar para o melhor advogado disponível ^1500",-70,
-  "Enquanto isso, verifique seu email! Dentro de alguns minutos enviaremos algumas informações.  ^1500",-70,
-
-  "Até mais! ^2500",-70,
-
-
+  "Irei analisar seu caso com calma e te encaminhar para o melhor advogado disponível. ^1500",-70,
+  "Enquanto isso, verifique seu email, enviaremos algumas informações para confirmação.  ^1500",-70,
+  "Abraços e boa sorte!",
+      "formVoltar",-70,
 
   "fim", 8,
   ];
@@ -53,21 +51,36 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
   var templateForm = $('#hidden-template-form').html();
 
 
+  // $(function(){
+  //     $("#intro-msg").typed({
+  //       strings: ["^1500 Olá, eu me chamo Eloisa! ^2000", "Sou a assistente virtual que vai te atender.^2000",
+  //        "Fique tranquilo, suas informações ficarão em sigilo! ^3000"],
+  //       //  strings: [" Olá"],
+  //       typeSpeed: 0,
+  //       backSpeed: -40,
+  //       callback: function() {
+  //         $("#intro").addClass("fadeOutUpBig");
+  //         $("#avatar-eloisa").removeClass("hide");
+  //         $("#avatar-eloisa").addClass("bounceInUp");
+  //         enviaMsg();
+  //       }
+  //     });
+  // });
+
+  var intro = function(){
+    $interval(function(){
+      $("#intro").addClass("fadeOutUpBig");
+      $("#avatar-eloisa").removeClass("hide");
+      $("#avatar-eloisa").addClass("bounceInUp");
+      enviaMsg();
+    }, 5000, 1);
+  }
+
   $(function(){
-      $("#intro-msg").typed({
-        strings: ["^1500 Olá, eu me chamo Eloisa! ^2000", "Sou a assistente virtual que vai te atender.^2000",
-         "Fique tranquilo, suas informações ficarão em sigilo! ^3000"],
-        //  strings: [" Olá"],
-        typeSpeed: 0,
-        backSpeed: -40,
-        callback: function() {
-          $("#intro").addClass("fadeOutUpBig");
-          $("#avatar-eloisa").removeClass("hide");
-          $("#avatar-eloisa").addClass("bounceInUp");
-          enviaMsg();
-        }
-      });
+    intro();
   });
+
+
 
 
     var enviaMsg = function(){

@@ -12,6 +12,9 @@
   font-family: 'Montserrat-Light';
   src: url("fonts/Montserrat-Light.ttf") format("truetype"); }
 @font-face {
+  font-family: 'Lato-Regular';
+  src: url("fonts/Lato-Regular.ttf") format("truetype"); }
+@font-face {
   font-family: 'Karma';
   src: url("fonts/Karma-Regular.ttf") format("truetype"); }
 .option {
@@ -34,6 +37,10 @@
     -moz-transform: translate(0, 7px); }
   to {
     -moz-transform: translate(0, 0px); } }
+body {
+  background-color: #fdfdfd;
+  -webkit-font-smoothing: antialiased; }
+
 body::-webkit-scrollbar {
   display: none; }
 
@@ -79,7 +86,7 @@ body::scrollbar {
     padding-top: 28px; }
     .navbar ul li {
       font-size: 20px;
-      font-family: 'Montserrat-Light'; }
+      font-family: 'Lato-Regular'; }
       .navbar ul li:hover {
         border-bottom: 4px solid #FF5F6D; }
     .navbar ul li:hover {
@@ -233,7 +240,7 @@ body::scrollbar {
     transition: all .2s ease-in-out; }
     #sec-2 .sub-sec p {
       font-size: 20px;
-      font-family: 'Karma'; }
+      font-family: 'Lato-Regular'; }
     #sec-2 .sub-sec .ajuste-img {
       width: 35%;
       padding: 0 0 16px 0; }
@@ -277,7 +284,7 @@ body::scrollbar {
     margin: 0; }
   #sec-4 p {
     color: #444;
-    font-family: 'Karma';
+    font-family: 'Lato-Regular';
     font-weight: bold;
     font-size: 20px;
     padding-bottom: 12px; }
@@ -297,7 +304,7 @@ body::scrollbar {
   #sec-5 p {
     text-align: center;
     font-size: 18px;
-    font-family: 'Karma'; }
+    font-family: 'Lato-Regular'; }
   #sec-5 #botao {
     padding-top: 20px; }
     #sec-5 #botao button {
@@ -359,7 +366,7 @@ body::scrollbar {
     font-size: 18px;
     padding: 0 20px 0 20px;
     text-align: left;
-    font-family: 'Karma'; }
+    font-family: 'Lato-Regular'; }
     #sec-6 p a {
       text-decoration: underline; }
   @media screen and (max-device-width: 700px) {
@@ -376,7 +383,7 @@ body::scrollbar {
     padding-top: 32px; }
     #sec-7 ul li {
       font-size: 20px;
-      font-family: 'Karma';
+      font-family: 'Lato-Regular';
       color: white;
       padding-right: 32px;
       display: inline-block;
@@ -400,7 +407,7 @@ body::scrollbar {
     padding: 10px 55px 30px 55px; }
     #sec-7 #modal .modal-body p {
       font-size: 18px;
-      font-family: 'Karma';
+      font-family: 'Lato-Regular';
       color: #636363; }
 
 @media screen and (max-device-width: 700px) {
@@ -419,12 +426,13 @@ body::scrollbar {
   position: absolute;
   background: linear-gradient(to left, #FF5F6D, #FFC371);
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  z-index: 10; }
   #chat #intro #intro-avatar {
     align-self: center; }
   #chat #intro #intro-msg {
     align-self: center;
-    font-size: 64px;
+    font-size: 48px;
     color: white;
     font-family: 'Montserrat-Bold'; }
   @media screen and (max-device-width: 700px) {
@@ -433,11 +441,12 @@ body::scrollbar {
       font-size: 30px;
       padding-top: 32px; } }
 #chat #header {
+  position: fixed;
+  width: 100%;
   background: linear-gradient(to left, #FF5F6D, #FFC371);
   color: white;
   padding-top: 28px;
-  padding-bottom: 28px;
-  margin-bottom: 64px; }
+  padding-bottom: 28px; }
   #chat #header .container {
     display: -webkit-flex;
     display: flex;
@@ -483,36 +492,52 @@ body::scrollbar {
       right: 30px;
       background-image: url(../img/Eloisa-mini80.png); } }
 #chat #conversa {
-  padding: 10px 250px 200px 250px;
+  padding: 200px 250px 200px 250px;
   overflow-y: auto; }
   #chat #conversa .mensagem-container {
     margin-bottom: 32px; }
     #chat #conversa .mensagem-container #avatar-mensagem {
       float: left; }
+      #chat #conversa .mensagem-container #avatar-mensagem #avatar-elo {
+        height: 40px;
+        font-size: 20px;
+        padding: 9px 16px;
+        border-radius: 8px;
+        background-color: #FF5F6D;
+        color: white;
+        transition: background-color 0.5s ease; }
+        #chat #conversa .mensagem-container #avatar-mensagem #avatar-elo:hover {
+          background-color: #FFC371; }
     #chat #conversa .mensagem-container #avatar-resposta {
       float: right; }
     #chat #conversa .mensagem-container .avatar {
-      padding-top: 4px;
       vertical-align: super;
       display: inline-block; }
       #chat #conversa .mensagem-container .avatar img {
         width: 24px; }
     #chat #conversa .mensagem-container #mensagem {
+      margin-left: 10px;
+      border-radius: 0 10px 10px 10px;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+      padding: 10px 15px;
       text-align: left;
-      font-family: 'Karma';
-      color: #636363;
-      height: 40px;
-      line-height: 40px; }
+      font-family: 'Lato-Regular';
+      color: #666;
+      background-color: white; }
       #chat #conversa .mensagem-container #mensagem p {
         font-size: 22px; }
     #chat #conversa .mensagem-container #resposta {
-      text-align: right;
-      font-family: 'Karma';
-      color: #636363;
-      height: 40px;
-      line-height: 40px; }
+      margin-right: 10px;
+      background-color: #FFC371;
+      border-radius: 10px 0 10px 10px;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+      padding: 10px 15px;
+      text-align: left;
+      font-family: 'Lato-Regular';
+      color: #666; }
       #chat #conversa .mensagem-container #resposta p {
-        font-size: 22px; }
+        font-size: 22px;
+        color: white; }
     @media screen and (max-device-width: 700px) {
       #chat #conversa .mensagem-container #resposta {
         height: 18px;
@@ -538,11 +563,10 @@ body::scrollbar {
           padding: 5px 10px;
           border-radius: 8px; } }
     #chat #conversa .mensagem-container .texto {
-      width: 90%;
+      max-width: 75%;
       display: inline-block;
       margin-bottom: 0;
       font-size: 24px;
-      letter-spacing: 0.1rem;
       text-align: left;
       padding: 1px 15px 0; }
 @media screen and (max-device-width: 700px) {
@@ -556,7 +580,7 @@ body::scrollbar {
         width: 18px; }
     #chat #conversa .mensagem-container #mensagem {
       text-align: left;
-      font-family: 'Karma';
+      font-family: 'Lato-Regular';
       color: #636363;
       height: 18px;
       line-height: 18px;
@@ -579,26 +603,26 @@ body::scrollbar {
       border: none;
       box-shadow: none;
       font-size: 24px;
-      font-family: 'Karma'; }
+      font-family: 'Lato-Regular'; }
   #chat #form-container .input-botao-container {
     width: 15%; }
     #chat #form-container .input-botao-container #botao-enviar {
       width: 100%;
       color: white;
-      font-family: 'Karma';
+      font-family: 'Lato-Regular';
       font-size: 24px;
       line-height: 24px;
       background-color: #FF5F6D;
-      border-radius: 0;
+      border-radius: 15px;
       border: 0;
-      padding: 19px 20px 15px 20px;
+      padding: 20px;
       transition: 0.3s ease; }
       #chat #form-container .input-botao-container #botao-enviar:hover {
         opacity: 0.8; }
   #chat #form-container textarea {
     width: 93%;
     border: none;
-    font-family: 'Karma';
+    font-family: 'Lato-Regular';
     font-size: 18px; }
 @media screen and (max-device-width: 700px) {
   #chat #form-container {
@@ -624,20 +648,20 @@ body::scrollbar {
   background-color: #fbfbfb; }
   #chat #form-container-tipo p {
     font-size: 24px;
-    font-family: 'Karma'; }
+    font-family: 'Lato-Regular'; }
   #chat #form-container-tipo .input-botao-container {
     width: 15%;
     margin: 5px; }
     #chat #form-container-tipo .input-botao-container #botao-enviar {
       width: 100%;
       color: white;
-      font-family: 'Karma';
+      font-family: 'Lato-Regular';
       font-size: 22px;
       line-height: 22px;
       background-color: #FF5F6D;
-      border-radius: 0;
+      border-radius: 15px;
       border: 0;
-      padding: 28px 25px 25px 25px;
+      padding: 25px;
       transition: 0.3s ease; }
       #chat #form-container-tipo .input-botao-container #botao-enviar:hover {
         background-color: #FFC371; }
