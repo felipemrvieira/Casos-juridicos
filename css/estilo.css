@@ -166,9 +166,12 @@ body::scrollbar {
     #sec-1 #botao {
       display: none; } }
   @media screen and (max-device-width: 700px) {
-    #sec-1 #homem {
-      display: block;
-      max-width: 100%; } }
+    #sec-1 .homem-container {
+      text-align: center; }
+      #sec-1 .homem-container #homem {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        max-width: 80%; } }
   #sec-1 #botao-mobile {
     display: none; }
   @media screen and (max-device-width: 700px) {

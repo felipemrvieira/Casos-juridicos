@@ -280,10 +280,15 @@ body::scrollbar {
         }
 
         @media screen and (max-device-width: 700px) {
-          #homem{
-            display: block;
-            max-width: 100%;
+          .homem-container{
+            text-align: center;
+            #homem{
+              padding-top: 10px;
+              padding-bottom: 10px;
+              max-width: 80%;
+            }
           }
+
         }
 
         #botao-mobile{
