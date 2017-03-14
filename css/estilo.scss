@@ -35,7 +35,7 @@
       animation-delay: 4s;
   }
 
-$cinza-claro: #fbfbfb;
+$cinza-claro: #f9f9f9;
 $cinza-escuro: #444;
 $laranja-claro: #e04a14;
 $laranja-escuro: #b71d19;
@@ -682,17 +682,21 @@ body::scrollbar {
       font-family: 'Montserrat-Bold';
 
     }
+  }
 
-    @media screen and (max-device-width: 700px) {
+  @media screen and (max-device-width: 700px) {
+    #intro{
+      #intro-avatar{
+        width: 60%;
+      }
       #intro-msg{
         align-self: center;
-        font-size: 30px;
-        padding-top: 32px;
-
+        font-size: 25px;
+        letter-spacing: -1px;
+        padding-top: 42px;
       }
     }
   }
-
 
   #header{
     position: fixed;
@@ -711,12 +715,30 @@ body::scrollbar {
         align-self: center;
         color: white;
         display: inline-block;
-        a{color: white;}
-      }
-      img{
-        width: 50px;
+        a{
+          color: white;
+          img{
+            transform: rotate(90deg);
+            padding: 4px;
+            border-radius: 100px;
+            width: 40px;
+            transition: all 0.2s ease-out;
+            &:hover{
+              background-color: rgba(255,255,255,.3);
+            }
+          }
+        }
+
+
+        @media screen and (max-device-width: 700px) {
+          .fa-3x{
+            font-size: 2em;
+
+          }
+        }
 
       }
+
 
 
 
@@ -725,12 +747,13 @@ body::scrollbar {
         display: inline-block;
         margin-bottom: 0;
         font-size: 32px;
+        letter-spacing: -1px;
         font-family: 'Montserrat-Bold';
       }
 
       @media screen and (max-device-width: 700px) {
         p{
-          font-size: 22px;
+          font-size: 20px;
         }
       }
     }
@@ -768,6 +791,12 @@ body::scrollbar {
     }
   }
 
+  @media screen and (max-device-width: 700px) {
+    #header{
+      padding: 20px;
+    }
+  }
+
   #conversa{
     padding: 200px 250px 200px 250px;
     overflow-y: auto;
@@ -791,6 +820,12 @@ body::scrollbar {
           }
 
         }
+          @media screen and (max-device-width: 700px) {
+            #avatar-elo{
+              font-size: 15px;
+              padding: 5px 10px;
+            }
+          }
       }
       #avatar-resposta{
         float: right;
@@ -835,8 +870,8 @@ body::scrollbar {
 
       @media screen and (max-device-width: 700px) {
         #resposta{
-          height: 18px;
-          line-height: 18px;
+          // height: 18px;
+          // line-height: 18px;
           p{
             font-size: 18px;
           }
@@ -884,7 +919,7 @@ body::scrollbar {
 
   @media screen and (max-device-width: 700px) {
     #conversa{
-      padding: 22px;
+      padding: 110px 22px 130px 22px;
 
       .mensagem-container{
 
@@ -901,9 +936,9 @@ body::scrollbar {
           text-align: left;
           font-family: 'Lato-Regular';
           color: #636363;
-          height: 18px;
-          line-height: 18px;
-          padding-top: 4px;
+          // height: 18px;
+          // line-height: 18px;
+          // padding-top: 4px;
           p{
             font-size: 18px;
           }
@@ -946,7 +981,7 @@ body::scrollbar {
         font-size: 24px;
         line-height: 24px;
         background-color: $pastel-escuro;
-        border-radius: 15px;
+        border-radius: 8px;
         border: 0;
         padding: 20px;
         transition: 0.3s ease;
@@ -954,6 +989,11 @@ body::scrollbar {
         &:hover{
           opacity: 0.8;
 
+        }
+      }
+      @media screen and (max-device-width: 700px) {
+        #botao-enviar{
+          padding: 15px;
         }
       }
     }
@@ -971,7 +1011,7 @@ body::scrollbar {
 
   @media screen and (max-device-width: 700px) {
     #form-container{
-      padding: 22px;
+      padding: 15px;
 
       .input-texto-container{
         width: 100%;
@@ -1033,6 +1073,8 @@ body::scrollbar {
 
   @media screen and (max-device-width: 700px) {
     #form-container-tipo{
+      height: 100%;
+      padding-top: 50px;
       .input-botao-container{
         width: initial;
         #botao-enviar{

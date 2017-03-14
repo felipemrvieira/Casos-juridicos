@@ -227,7 +227,7 @@ body::scrollbar {
       display: none; } }
 
 #sec-2 {
-  background-color: #fbfbfb;
+  background-color: #f9f9f9;
   padding-bottom: 50px; }
   #sec-2 h2 {
     font-family: 'Montserrat', sans-serif;
@@ -258,7 +258,7 @@ body::scrollbar {
     margin: 0; }
 
 #sec-4 {
-  background-color: #f6f6f6;
+  background-color: #f4f4f4;
   position: relative;
   padding: 65px 32px 45px 32px; }
   #sec-4 #app-container {
@@ -352,7 +352,7 @@ body::scrollbar {
         font-size: 13px; } }
 
 #sec-6 {
-  background-color: #fbfbfb;
+  background-color: #f9f9f9;
   padding-bottom: 75px;
   padding-top: 40px; }
   #sec-6 h2 {
@@ -435,11 +435,14 @@ body::scrollbar {
     font-size: 48px;
     color: white;
     font-family: 'Montserrat-Bold'; }
-  @media screen and (max-device-width: 700px) {
-    #chat #intro #intro-msg {
-      align-self: center;
-      font-size: 30px;
-      padding-top: 32px; } }
+@media screen and (max-device-width: 700px) {
+  #chat #intro #intro-avatar {
+    width: 60%; }
+  #chat #intro #intro-msg {
+    align-self: center;
+    font-size: 25px;
+    letter-spacing: -1px;
+    padding-top: 42px; } }
 #chat #header {
   position: fixed;
   width: 100%;
@@ -457,17 +460,27 @@ body::scrollbar {
       display: inline-block; }
       #chat #header .container #voltar a {
         color: white; }
-    #chat #header .container img {
-      width: 50px; }
+        #chat #header .container #voltar a img {
+          transform: rotate(90deg);
+          padding: 4px;
+          border-radius: 100px;
+          width: 40px;
+          transition: all 0.2s ease-out; }
+          #chat #header .container #voltar a img:hover {
+            background-color: rgba(255, 255, 255, 0.3); }
+      @media screen and (max-device-width: 700px) {
+        #chat #header .container #voltar .fa-3x {
+          font-size: 2em; } }
     #chat #header .container p {
       align-self: center;
       display: inline-block;
       margin-bottom: 0;
       font-size: 32px;
+      letter-spacing: -1px;
       font-family: 'Montserrat-Bold'; }
     @media screen and (max-device-width: 700px) {
       #chat #header .container p {
-        font-size: 22px; } }
+        font-size: 20px; } }
   #chat #header #avatar-eloisa {
     -webkit-box-shadow: 6px 6px 18px -4px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 6px 6px 18px -4px rgba(0, 0, 0, 0.75);
@@ -491,6 +504,9 @@ body::scrollbar {
       line-height: 80px;
       right: 30px;
       background-image: url(../img/Eloisa-mini80.png); } }
+@media screen and (max-device-width: 700px) {
+  #chat #header {
+    padding: 20px; } }
 #chat #conversa {
   padding: 200px 250px 200px 250px;
   overflow-y: auto; }
@@ -508,6 +524,10 @@ body::scrollbar {
         transition: background-color 0.5s ease; }
         #chat #conversa .mensagem-container #avatar-mensagem #avatar-elo:hover {
           background-color: #FFC371; }
+      @media screen and (max-device-width: 700px) {
+        #chat #conversa .mensagem-container #avatar-mensagem #avatar-elo {
+          font-size: 15px;
+          padding: 5px 10px; } }
     #chat #conversa .mensagem-container #avatar-resposta {
       float: right; }
     #chat #conversa .mensagem-container .avatar {
@@ -539,11 +559,8 @@ body::scrollbar {
         font-size: 22px;
         color: white; }
     @media screen and (max-device-width: 700px) {
-      #chat #conversa .mensagem-container #resposta {
-        height: 18px;
-        line-height: 18px; }
-        #chat #conversa .mensagem-container #resposta p {
-          font-size: 18px; } }
+      #chat #conversa .mensagem-container #resposta p {
+        font-size: 18px; } }
     #chat #conversa .mensagem-container #avatar-resposta {
       height: 40px; }
       #chat #conversa .mensagem-container #avatar-resposta span {
@@ -571,7 +588,7 @@ body::scrollbar {
       padding: 1px 15px 0; }
 @media screen and (max-device-width: 700px) {
   #chat #conversa {
-    padding: 22px; }
+    padding: 110px 22px 130px 22px; }
     #chat #conversa .mensagem-container .avatar {
       padding: 0;
       vertical-align: super;
@@ -581,10 +598,7 @@ body::scrollbar {
     #chat #conversa .mensagem-container #mensagem {
       text-align: left;
       font-family: 'Lato-Regular';
-      color: #636363;
-      height: 18px;
-      line-height: 18px;
-      padding-top: 4px; }
+      color: #636363; }
       #chat #conversa .mensagem-container #mensagem p {
         font-size: 18px; } }
 #chat #form-container {
@@ -594,12 +608,12 @@ body::scrollbar {
   left: 0;
   right: 0;
   padding: 40px 25px;
-  background-color: #fbfbfb; }
+  background-color: #f9f9f9; }
   #chat #form-container .input-texto-container {
     width: 80%; }
     #chat #form-container .input-texto-container #input-texto {
       width: 100%;
-      background-color: #fbfbfb;
+      background-color: #f9f9f9;
       border: none;
       box-shadow: none;
       font-size: 24px;
@@ -613,12 +627,15 @@ body::scrollbar {
       font-size: 24px;
       line-height: 24px;
       background-color: #FF5F6D;
-      border-radius: 15px;
+      border-radius: 8px;
       border: 0;
       padding: 20px;
       transition: 0.3s ease; }
       #chat #form-container .input-botao-container #botao-enviar:hover {
         opacity: 0.8; }
+    @media screen and (max-device-width: 700px) {
+      #chat #form-container .input-botao-container #botao-enviar {
+        padding: 15px; } }
   #chat #form-container textarea {
     width: 93%;
     border: none;
@@ -626,7 +643,7 @@ body::scrollbar {
     font-size: 18px; }
 @media screen and (max-device-width: 700px) {
   #chat #form-container {
-    padding: 22px; }
+    padding: 15px; }
     #chat #form-container .input-texto-container {
       width: 100%; }
       #chat #form-container .input-texto-container #input-texto {
@@ -645,7 +662,7 @@ body::scrollbar {
   left: 0;
   right: 0;
   padding: 28px 25px;
-  background-color: #fbfbfb; }
+  background-color: #f9f9f9; }
   #chat #form-container-tipo p {
     font-size: 24px;
     font-family: 'Lato-Regular'; }
@@ -666,11 +683,14 @@ body::scrollbar {
       #chat #form-container-tipo .input-botao-container #botao-enviar:hover {
         background-color: #FFC371; }
 @media screen and (max-device-width: 700px) {
-  #chat #form-container-tipo .input-botao-container {
-    width: initial; }
-    #chat #form-container-tipo .input-botao-container #botao-enviar {
-      padding: 20px 15px;
-      font-size: 18px;
-      line-height: 18px; } }
+  #chat #form-container-tipo {
+    height: 100%;
+    padding-top: 50px; }
+    #chat #form-container-tipo .input-botao-container {
+      width: initial; }
+      #chat #form-container-tipo .input-botao-container #botao-enviar {
+        padding: 20px 15px;
+        font-size: 18px;
+        line-height: 18px; } }
 
 /*# sourceMappingURL=estilo.css.map */
