@@ -535,6 +535,8 @@ body::scrollbar {
       display: inline-block; }
       #chat #conversa .mensagem-container .avatar img {
         width: 24px; }
+    #chat #conversa .mensagem-container .typing img {
+      padding-left: 10px; }
     #chat #conversa .mensagem-container #mensagem {
       margin-left: 10px;
       border-radius: 0 10px 10px 10px;

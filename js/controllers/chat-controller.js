@@ -49,7 +49,7 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
   "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar! ",-90,
   "Antes de começarmos, como posso te chamar?",-50,
     "formNome",-70,
-  "Prazer!",-70,
+
   "Qual a cidade e estado que você mora?",-70,
   "Para selecionarmos o melhor profissional para o seu caso, selecione a área do Direito que mais se aproxima com o seu caso.",-70,
     "formTipo",-70,
@@ -102,7 +102,6 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
     }, 5, 1);
   });
 
-
     var enviaMsg = function(){
       $interval(function(){
         validaMsg();
@@ -110,22 +109,7 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
       }, time, 1);
     }
 
-
-
-    function digita(mensagem, tempo){
-      // $('#txt:last-child').typed({
-      //   strings: [mensagem],
-      //   typeSpeed: tempo,
-      //   callback: function() {
-      //     enviaMsg();
-      //   }
-      // });
-      $('#txt:last-child').text(mensagem);
-      enviaMsg();
-    };
-
     function validaMsg(){
-        // console.log(self.usuario)
       switch (mensagem[i]) {
         case "fim":
           $interval.cancel(enviaMsg);
@@ -163,7 +147,12 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
           break;
         default:
           $('#conversa').append(templateMensagem);
-          digita(mensagem[i], mensagem[i+1]);
+          $('.mensagem-container:last-child').find("#txt").text(mensagem[i]);
+          $interval(function(){
+            $('.mensagem-container:last-child').find(".typing").addClass("ng-hide");
+            $('.mensagem-container:last-child').find("#mensagem").removeClass("ng-hide");
+            enviaMsg();
+          }, 1000, 1);
           i += 2;
           $(document).scrollTop(10000);
 
@@ -176,8 +165,14 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
       i += 2;
       $('#conversa').append(templateResposta);
       $('#avatar-cliente:last-child').text(self.usuario.letra);
-      // $('#txt:last-child').text(self.usuario.nome)
-      digita("Me chamo " + self.usuario.nome, -8000);
+        $('.mensagem-container:last-child').find("#txt").text("Me chamo " + self.usuario.nome);
+      $interval(function(){
+        $('#conversa').append(templateMensagem);
+        $('.mensagem-container:last-child').find("#txt").text("Prazer, " + self.usuario.nome);
+        $('.mensagem-container:last-child').find(".typing").addClass("ng-hide");
+        $('.mensagem-container:last-child').find("#mensagem").removeClass("ng-hide");
+        enviaMsg();
+      }, 2000, 1);
     }
 
     self.selTipo = function(){
