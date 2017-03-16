@@ -387,7 +387,7 @@ body::scrollbar {
     margin-bottom: 40px;
     color: #444; }
   @media screen and (max-device-width: 700px) {
-    #sec-6 {
+    #sec-6 h1 {
       text-align: left; } }
   #sec-6 p {
     font-size: 18px;
@@ -407,6 +407,9 @@ body::scrollbar {
     padding-top: 120px; }
     #sec-7 #logo img {
       width: 10%; }
+    @media screen and (max-device-width: 700px) {
+      #sec-7 #logo img {
+        width: 30%; } }
   #sec-7 ul {
     text-align: center;
     padding-top: 12px; }
@@ -726,5 +729,21 @@ body::scrollbar {
         padding: 20px 15px;
         font-size: 18px;
         line-height: 18px; } }
+#chat .input-botao-container-voltar {
+  margin: 5px;
+  padding: 25px; }
+  #chat .input-botao-container-voltar #botao-enviar {
+    width: 100%;
+    color: white;
+    font-family: 'Lato-Regular';
+    font-size: 22px;
+    line-height: 22px;
+    background-color: #FF5F6D;
+    border-radius: 15px;
+    border: 0;
+    padding: 25px;
+    transition: 0.3s ease; }
+    #chat .input-botao-container-voltar #botao-enviar:hover {
+      background-color: #FFC371; }
 
 /*# sourceMappingURL=estilo.css.map */

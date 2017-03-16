@@ -596,7 +596,9 @@ body::scrollbar {
   }
 
   @media screen and (max-device-width: 700px) {
-    text-align: left;
+    h1{
+      text-align: left;
+    }
   }
 
   p{
@@ -628,6 +630,13 @@ body::scrollbar {
     img{
       width: 10%;
     }
+
+    @media screen and (max-device-width: 700px) {
+      img{
+        width: 30%;
+      }
+    }
+
   }
 
   ul{
@@ -1136,6 +1145,28 @@ body::scrollbar {
         }
       }
 
+    }
+  }
+
+  .input-botao-container-voltar{
+    margin: 5px;
+    padding: 25px;
+    #botao-enviar{
+      width: 100%;
+      color: white;
+      font-family: 'Lato-Regular';
+      font-size: 22px;
+      line-height: 22px;
+      background-color: $pastel-escuro;
+      border-radius: 15px;
+      border: 0;
+      padding: 25px;
+      transition: 0.3s ease;
+
+      &:hover{
+        background-color: $pastel-claro;
+
+      }
     }
   }
 

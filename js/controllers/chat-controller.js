@@ -19,32 +19,6 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
   self.escondeFormVoltar = true;
 
 
-
-  // var mensagem = ["Olá, eu sou Eloisa! :)", -70,
-  // "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar! ^2000",-90,
-  // "Antes de começarmos, como posso te chamar? ^500",-50,
-  //   "formNome",-70,
-  // "Prazer!",-70,
-  // "Qual a cidade e estado que você mora?",-70,
-  // "Para selecionarmos o melhor profissional para o seu caso, selecione a área do Direito que mais se aproxima com o seu caso.",-70,
-  //   "formTipo",-70,
-  // "Certo, entendi.",-70,
-  // "Agora preciso que conte rapidamente  o seu caso jurídico. ^2500",-70,
-  //   "formDescricao",-70,
-  // "Bem delicado, mas iremos te ajudar. ^2500",-70,
-  // "Para que você seja contactado por um advogado, precisamos do seu email. ^500",-70,
-  //   "formEmail",-70,
-  // "E o telefone com DDD? ^500",-70,
-  //   "formTelefone",-70,
-  // "Certo, anotei tudinho aqui! ^1000",-70,
-  // "Irei analisar seu caso com calma e te encaminhar para o melhor advogado disponível. ^1500",-70,
-  // "Enquanto isso, verifique seu email, enviaremos algumas informações para confirmação.  ^1500",-70,
-  // "Abraços e boa sorte!",
-  //     "formVoltar",-70,
-  //
-  // "fim", 8,
-  // ];
-
   var mensagem = ["Olá, eu sou Eloisa! :)", -70,
   "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar! ",-90,
   "Antes de começarmos, como posso te chamar?",-50,
@@ -64,7 +38,7 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
   "Certo, anotei tudinho aqui!",-70,
   "Irei analisar seu caso com calma e te encaminhar para o melhor advogado disponível.",-70,
   "Enquanto isso, verifique seu email, enviaremos algumas informações para confirmação.",-70,
-  "Abraços e boa sorte!",
+  // "Abraços e boa sorte!", -70,
       "formVoltar",-70,
 
   "fim", 8,
@@ -121,9 +95,10 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
           $(document).scrollTop(10000);
           break;
         case "formTipo":
-          self.escondeFormTipo = false;
-          $interval.cancel(enviaMsg);
-          $(document).scrollTop(10000);
+          $interval(function(){
+            $(document).scrollTop(10000);
+            self.escondeFormTipo = false;
+          }, 3000, 1);
           break;
         case "formDescricao":
           self.escondeFormDescricao = false;
@@ -180,8 +155,9 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
       i += 2;
       $('#conversa').append(templateResposta);
       $('#avatar-cliente:last-child').text(self.usuario.letra);
-      $('#txt:last-child').text("problema")
-      digita("Estou com problema relacionado a área: " + self.usuario.tipo, -7000);
+      $('.mensagem-container:last-child').find("#txt").text("Estou com problema relacionado a área: " + self.usuario.tipo);
+      enviaMsg();
+
     }
 
     self.enviaDescricao = function(){
@@ -189,7 +165,8 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
       i += 2;
       $('#conversa').append(templateResposta);
       $('#avatar-cliente:last-child').text(self.usuario.letra);
-      digita(self.usuario.descricao, -8000);
+      $('.mensagem-container:last-child').find("#txt").text(self.usuario.descricao);
+      enviaMsg();
 
     }
 
@@ -198,8 +175,8 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
       $('#conversa').append(templateResposta);
       $('#avatar-cliente:last-child').text(self.usuario.letra);
       i += 2;
-      digita(self.usuario.email, -7000);
-      // $('#txt:last-child').text(self.usuario.email);
+      $('.mensagem-container:last-child').find("#txt").text(self.usuario.email);
+      enviaMsg();
 
     }
 
@@ -208,12 +185,15 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
       $('#conversa').append(templateResposta);
       $('#avatar-cliente:last-child').text(self.usuario.letra);
       i += 2;
-      digita(String(self.usuario.telefone), -7000);
+      $('.mensagem-container:last-child').find("#txt").text(String(self.usuario.telefone));
+      enviaMsg();
     }
 
 
 
-
+    self.voltar = function (){
+      $location.path( '/' );
+    };
 
 
 
