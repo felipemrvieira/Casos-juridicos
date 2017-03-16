@@ -145,8 +145,9 @@ body::scrollbar {
     padding-top: 28px;
 
     li{
-      font-size: 20px;
+      font-size: 18px;
       font-family: 'Lato-Regular';
+
 
       &:hover{
         border-bottom: 4px solid #FF5F6D;
@@ -176,7 +177,7 @@ body::scrollbar {
         h1{
             color: #FF5F6D;
             font-family: 'Montserrat', sans-serif;
-            font-size: 45px;
+            font-size: 40px;
             font-weight: bold;
             margin-bottom: 20px;
         }
@@ -184,14 +185,20 @@ body::scrollbar {
         .chamada{
           font-family: 'Montserrat-Light';
           color: #3d3d3d;
-          font-size: 42px;
+          font-size: 38px;
           font-weight: 400;
-          line-height: 28px;
+          line-height: 22px;
           letter-spacing: .5px;
           color: #3d3d3d;
           padding-bottom: 20px;
         }
 
+        @media screen and (min-width: 701px) and (max-width: 1199px){
+          .chamada{
+            font-size: 32px;
+            margin-bottom: 0;
+          }
+        }
         @media screen and (max-device-width: 700px) {
           .info{
             padding-top: 0;
@@ -206,7 +213,6 @@ body::scrollbar {
             margin-bottom: 0;
           }
         }
-
 
     }
 
@@ -285,13 +291,19 @@ body::scrollbar {
             }
 
         }
-
+        .homem-container{
+          text-align: center;
+          #homem{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            max-width: 80%;
+          }
+        }
         @media screen and (max-device-width: 700px) {
           .homem-container{
             text-align: center;
             #homem{
-              padding-top: 10px;
-              padding-bottom: 10px;
+
               max-width: 80%;
             }
           }
@@ -338,7 +350,10 @@ body::scrollbar {
 
         .seta{
           @include float();
+          position: absolute;
           text-align: center;
+          left: 0;
+          bottom: 0;
           img{
             width: 100px;
           }
@@ -353,18 +368,24 @@ body::scrollbar {
 
 
 #sec-2{
-  background-color: $cinza-claro;
-  padding-bottom: 50px;
+  background-color: white;
+  padding: 20px 0 70px 0;
 
 
 
-    h2{
+    h1{
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       color: $cinza-escuro;
       text-align: center;
       padding: 32px 0 42px 0;
       margin: 0;
+    }
+
+    @media screen and (max-device-width: 700px) {
+      h1{
+          padding: 32px 0 22px 0;
+        }
     }
 
 
@@ -380,6 +401,13 @@ body::scrollbar {
         // opacity: 0.6;
         padding: 0 0 16px 0
       }
+      @media screen and (max-device-width: 700px) {
+        .ajuste-img{
+          width: 28%;
+
+        }
+      }
+
     }
     .sub-sec:hover{
 -webkit-filter: grayscale(10%);    }
@@ -395,6 +423,13 @@ body::scrollbar {
     text-align: center;
     padding: 32px 0 42px 0;
     margin: 0;
+  }
+
+  @media screen and (max-device-width: 700px) {
+    h1{
+      text-align: left;
+      padding: 30px;
+    }
   }
 }
 
@@ -454,7 +489,7 @@ body::scrollbar {
 }
 
 #sec-5{
-  padding: 20px 32px 50px 32px;
+  padding: 55px 32px 85px 32px;
 
 
   h1{
@@ -503,7 +538,8 @@ body::scrollbar {
 
       @media screen and (max-device-width: 700px) {
                     button{
-                      font-size: 12px;
+                      font-size: 11px;
+                      padding: 12px;
                     }
 
                 }
@@ -545,16 +581,22 @@ body::scrollbar {
 
 #sec-6{
   background-color: $cinza-claro;
-  padding-bottom: 75px;
-  padding-top: 40px;
+  padding-bottom: 90px;
+  padding-top: 45px;
 
-  h2{
+  h1{
     text-align: center;
     font-weight: 700;
     margin-top: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 40px;
     color: $cinza-escuro;
+  }
+
+  @media screen and (max-device-width: 700px) {
+    text-align: left;
   }
 
   p{
@@ -584,15 +626,15 @@ body::scrollbar {
   #logo{
     padding-top: 120px;
     img{
-      //width: 10%;
+      width: 10%;
     }
   }
 
   ul{
     text-align: center;
-    padding-top: 32px;
+    padding-top: 12px;
     li{
-      font-size: 20px;
+      font-size: 18px;
       font-family: 'Lato-Regular';
       color: white;
       padding-right: 32px;

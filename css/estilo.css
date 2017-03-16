@@ -85,7 +85,7 @@ body::scrollbar {
   .navbar ul {
     padding-top: 28px; }
     .navbar ul li {
-      font-size: 20px;
+      font-size: 18px;
       font-family: 'Lato-Regular'; }
       .navbar ul li:hover {
         border-bottom: 4px solid #FF5F6D; }
@@ -100,18 +100,22 @@ body::scrollbar {
   #sec-1 .container h1 {
     color: #FF5F6D;
     font-family: 'Montserrat', sans-serif;
-    font-size: 45px;
+    font-size: 40px;
     font-weight: bold;
     margin-bottom: 20px; }
   #sec-1 .container .chamada {
     font-family: 'Montserrat-Light';
     color: #3d3d3d;
-    font-size: 42px;
+    font-size: 38px;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 22px;
     letter-spacing: .5px;
     color: #3d3d3d;
     padding-bottom: 20px; }
+  @media screen and (min-width: 701px) and (max-width: 1199px) {
+    #sec-1 .container .chamada {
+      font-size: 32px;
+      margin-bottom: 0; } }
   @media screen and (max-device-width: 700px) {
     #sec-1 .container .info {
       padding-top: 0; }
@@ -172,12 +176,16 @@ body::scrollbar {
   @media screen and (max-device-width: 700px) {
     #sec-1 #botao {
       display: none; } }
+  #sec-1 .homem-container {
+    text-align: center; }
+    #sec-1 .homem-container #homem {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      max-width: 80%; }
   @media screen and (max-device-width: 700px) {
     #sec-1 .homem-container {
       text-align: center; }
       #sec-1 .homem-container #homem {
-        padding-top: 10px;
-        padding-bottom: 10px;
         max-width: 80%; } }
   #sec-1 #botao-mobile {
     display: none; }
@@ -219,7 +227,10 @@ body::scrollbar {
     -moz-animation-timing-function: ease-in-out;
     margin-left: 30px;
     margin-top: 5px;
-    text-align: center; }
+    position: absolute;
+    text-align: center;
+    left: 0;
+    bottom: 0; }
     #sec-1 .seta img {
       width: 100px; }
   @media screen and (max-device-width: 700px) {
@@ -227,15 +238,18 @@ body::scrollbar {
       display: none; } }
 
 #sec-2 {
-  background-color: #f9f9f9;
-  padding-bottom: 50px; }
-  #sec-2 h2 {
+  background-color: white;
+  padding: 20px 0 70px 0; }
+  #sec-2 h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #444;
     text-align: center;
     padding: 32px 0 42px 0;
     margin: 0; }
+  @media screen and (max-device-width: 700px) {
+    #sec-2 h1 {
+      padding: 32px 0 22px 0; } }
   #sec-2 .sub-sec {
     transition: all .2s ease-in-out; }
     #sec-2 .sub-sec p {
@@ -244,6 +258,9 @@ body::scrollbar {
     #sec-2 .sub-sec .ajuste-img {
       width: 35%;
       padding: 0 0 16px 0; }
+    @media screen and (max-device-width: 700px) {
+      #sec-2 .sub-sec .ajuste-img {
+        width: 28%; } }
   #sec-2 .sub-sec:hover {
     -webkit-filter: grayscale(10%); }
 
@@ -256,6 +273,10 @@ body::scrollbar {
     text-align: center;
     padding: 32px 0 42px 0;
     margin: 0; }
+  @media screen and (max-device-width: 700px) {
+    #sec-3 h1 {
+      text-align: left;
+      padding: 30px; } }
 
 #sec-4 {
   background-color: #f4f4f4;
@@ -293,7 +314,7 @@ body::scrollbar {
       padding-bottom: 30px; } }
 
 #sec-5 {
-  padding: 20px 32px 50px 32px; }
+  padding: 55px 32px 85px 32px; }
   #sec-5 h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -331,7 +352,8 @@ body::scrollbar {
       -webkit-transition: 0.2s ease-in; }
     @media screen and (max-device-width: 700px) {
       #sec-5 #botao button {
-        font-size: 12px; } }
+        font-size: 11px;
+        padding: 12px; } }
     #sec-5 #botao .fill:hover {
       color: white; }
     #sec-5 #botao .fill:before {
@@ -353,15 +375,20 @@ body::scrollbar {
 
 #sec-6 {
   background-color: #f9f9f9;
-  padding-bottom: 75px;
-  padding-top: 40px; }
-  #sec-6 h2 {
+  padding-bottom: 90px;
+  padding-top: 45px; }
+  #sec-6 h1 {
     text-align: center;
     font-weight: 700;
     margin-top: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 40px;
     color: #444; }
+  @media screen and (max-device-width: 700px) {
+    #sec-6 {
+      text-align: left; } }
   #sec-6 p {
     font-size: 18px;
     padding: 0 20px 0 20px;
@@ -378,11 +405,13 @@ body::scrollbar {
   background: linear-gradient(to left, #FF5F6D, #FFC371); }
   #sec-7 #logo {
     padding-top: 120px; }
+    #sec-7 #logo img {
+      width: 10%; }
   #sec-7 ul {
     text-align: center;
-    padding-top: 32px; }
+    padding-top: 12px; }
     #sec-7 ul li {
-      font-size: 20px;
+      font-size: 18px;
       font-family: 'Lato-Regular';
       color: white;
       padding-right: 32px;
