@@ -716,7 +716,10 @@ body::scrollbar {
 @media screen and (max-device-width: 700px) {
   #chat #form-container-tipo {
     height: 100%;
-    padding-top: 50px; }
+    padding-top: 24px; }
+    #chat #form-container-tipo p {
+      font-size: 20px;
+      padding-bottom: 12px; }
     #chat #form-container-tipo .input-botao-container {
       width: initial; }
       #chat #form-container-tipo .input-botao-container #botao-enviar {

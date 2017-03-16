@@ -52,7 +52,7 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
 
   "Qual a cidade e estado que você mora?",-70,
   "Para selecionarmos o melhor profissional para o seu caso, selecione a área do Direito que mais se aproxima com o seu caso.",-70,
-    "formTipo",-70,
+     "formTipo",-70,
   "Certo, entendi.",-70,
   "Agora preciso que conte rapidamente  o seu caso jurídico.",-70,
     "formDescricao",-70,

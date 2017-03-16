@@ -1122,7 +1122,11 @@ body::scrollbar {
   @media screen and (max-device-width: 700px) {
     #form-container-tipo{
       height: 100%;
-      padding-top: 50px;
+      padding-top: 24px;
+      p{
+        font-size: 20px;
+        padding-bottom: 12px;
+      }
       .input-botao-container{
         width: initial;
         #botao-enviar{
