@@ -24,7 +24,7 @@ function($location, $interval, $window, $http){
   "Antes de começarmos, como posso te chamar?",-50,
     "formNome",-70,
 
-  "Qual a cidade e estado que você mora?",-70,
+  // "Qual a cidade e estado que você mora?",-70,
   "Para selecionarmos o melhor profissional para o seu caso, selecione a área do Direito que mais se aproxima com o seu caso.",-70,
      "formTipo",-70,
   "Certo, entendi.",-70,
@@ -165,21 +165,22 @@ function($location, $interval, $window, $http){
           $('#avatar-cliente:last-child').text(self.usuario.letra);
           i += 2;
           $('.mensagem-container:last-child').find("#txt").text(self.usuario.email);
+          $(document).scrollTop(10000);
           enviaMsg();
         } else {
-            $(document).scrollTop(10000);
             $('#conversa').append(templateMensagem);
             $('.mensagem-container:last-child').find("#txt").text("Desculpe, não consideramos " + self.usuario.email +" um email válido!");
+            $(document).scrollTop(10000);
             $interval(function(){
               $('.mensagem-container:last-child').find(".typing").addClass("ng-hide");
               $('.mensagem-container:last-child').find("#mensagem").removeClass("ng-hide");
               if (t.data.did_you_mean) {
-                $(document).scrollTop(10000);
                 $('#conversa').append(templateMensagem);
                 $('.mensagem-container:last-child').find("#txt").text("Você quis dizer " + t.data.did_you_mean +"?");
                 $interval(function(){
                   $('.mensagem-container:last-child').find(".typing").addClass("ng-hide");
                   $('.mensagem-container:last-child').find("#mensagem").removeClass("ng-hide");
+                  $(document).scrollTop(10000);
                 }, 1500, 1);
               }
             }, 1000, 1);
