@@ -1,4 +1,5 @@
-angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$interval', '$window', function($location, $interval, $window){
+angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$interval', '$window', '$http',
+function($location, $interval, $window, $http){
 
   var self = this;
 
@@ -19,12 +20,16 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
   self.escondeFormVoltar = true;
 
 
+
+
+
+
   var mensagem = ["Olá, eu sou Eloisa! :)", -70,
   "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar! ",-90,
   "Antes de começarmos, como posso te chamar?",-50,
     "formNome",-70,
 
-  "Qual a cidade e estado que você mora?",-70,
+  // "Qual a cidade e estado que você mora?",-70,
   "Para selecionarmos o melhor profissional para o seu caso, selecione a área do Direito que mais se aproxima com o seu caso.",-70,
      "formTipo",-70,
   "Certo, entendi.",-70,
@@ -38,7 +43,7 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
   "Certo, anotei tudinho aqui!",-70,
   "Irei analisar seu caso com calma e te encaminhar para o melhor advogado disponível.",-70,
   "Enquanto isso, verifique seu email, enviaremos algumas informações para confirmação.",-70,
-  // "Abraços e boa sorte!", -70,
+  "Abraços e boa sorte!", -70,
       "formVoltar",-70,
 
   "fim", 8,
@@ -50,30 +55,13 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
   var templateResposta = $('#hidden-template-resposta').html();
   var templateForm = $('#hidden-template-form').html();
 
-
-  // $(function(){
-  //     $("#intro-msg").typed({
-  //       strings: ["^1500 Olá, eu me chamo Eloisa! ^2000", "Sou a assistente virtual que vai te atender.^2000",
-  //        "Fique tranquilo, suas informações ficarão em sigilo! ^3000"],
-  //       //  strings: [" Olá"],
-  //       typeSpeed: 0,
-  //       backSpeed: -40,
-  //       callback: function() {
-  //         $("#intro").addClass("fadeOutUpBig");
-  //         $("#avatar-eloisa").removeClass("hide");
-  //         $("#avatar-eloisa").addClass("bounceInUp");
-  //         enviaMsg();
-  //       }
-  //     });
-  // });
-
   $(function(){
     $interval(function(){
       $("#intro").addClass("fadeOutUpBig");
       $("#avatar-eloisa").removeClass("hide");
       $("#avatar-eloisa").addClass("bounceInUp");
       enviaMsg();
-    }, 5, 1);
+    }, 5000, 1);
   });
 
     var enviaMsg = function(){
@@ -171,12 +159,45 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
     }
 
     self.enviaEmail = function(){
-      self.escondeFormEmail = true;
-      $('#conversa').append(templateResposta);
-      $('#avatar-cliente:last-child').text(self.usuario.letra);
-      i += 2;
-      $('.mensagem-container:last-child').find("#txt").text(self.usuario.email);
-      enviaMsg();
+
+      $http.get('http://apilayer.net/api/check?access_key=82b26925292bbe8799720f003d776520&email='+self.usuario.email+'&smtp=1&format=1')
+      .then(successCallback, errorCallback);
+      function successCallback(response){
+        var t = angular.fromJson(response);
+        if (t.data.smtp_check === true) {
+          self.escondeFormEmail = true;
+          $('#conversa').append(templateResposta);
+          $('#avatar-cliente:last-child').text(self.usuario.letra);
+          i += 2;
+          $('.mensagem-container:last-child').find("#txt").text(self.usuario.email);
+          enviaMsg();
+        } else {
+            $('#conversa').append(templateMensagem);
+            $('.mensagem-container:last-child').find("#txt").text("Desculpe, não consideramos " + self.usuario.email +" um email válido!");
+            $interval(function(){
+              $('.mensagem-container:last-child').find(".typing").addClass("ng-hide");
+              $('.mensagem-container:last-child').find("#mensagem").removeClass("ng-hide");
+              if (t.data.did_you_mean) {
+                $('#conversa').append(templateMensagem);
+                $('.mensagem-container:last-child').find("#txt").text("Você quis dizer " + t.data.did_you_mean +"?");
+                $interval(function(){
+                  $('.mensagem-container:last-child').find(".typing").addClass("ng-hide");
+                  $('.mensagem-container:last-child').find("#mensagem").removeClass("ng-hide");
+                }, 1500, 1);
+              }
+            }, 1000, 1);
+
+        }
+
+
+
+      }
+      function errorCallback(error){
+        console.log(error);
+        return error;
+      }
+
+
 
     }
 
@@ -188,8 +209,6 @@ angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$in
       $('.mensagem-container:last-child').find("#txt").text(String(self.usuario.telefone));
       enviaMsg();
     }
-
-
 
     self.voltar = function (){
       $location.path( '/' );
