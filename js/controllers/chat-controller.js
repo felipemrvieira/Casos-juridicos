@@ -131,7 +131,7 @@ function($location, $interval, $window, $http){
         $('.mensagem-container:last-child').find("#txt").text("Me chamo " + self.usuario.nome);
       $interval(function(){
         $('#conversa').append(templateMensagem);
-        $('.mensagem-container:last-child').find("#txt").text("Prazer, " + self.usuario.nome);
+        $('.mensagem-container:last-child').find("#txt").text("Prazer, " + self.usuario.nome+"!");
         $('.mensagem-container:last-child').find(".typing").addClass("ng-hide");
         $('.mensagem-container:last-child').find("#mensagem").removeClass("ng-hide");
         enviaMsg();
@@ -160,7 +160,7 @@ function($location, $interval, $window, $http){
 
     self.enviaEmail = function(){
 
-      $http.get('http://apilayer.net/api/check?access_key=82b26925292bbe8799720f003d776520&email='+self.usuario.email+'&smtp=1&format=1')
+      $http.get('https://apilayer.net/api/check?access_key=82b26925292bbe8799720f003d776520&email='+self.usuario.email+'&smtp=1&format=1')
       .then(successCallback, errorCallback);
       function successCallback(response){
         var t = angular.fromJson(response);
