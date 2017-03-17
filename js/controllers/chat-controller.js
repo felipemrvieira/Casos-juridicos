@@ -25,18 +25,18 @@ function($location, $interval, $window, $http){
 
 
   var mensagem = ["Olá, eu sou Eloisa! :)", -70,
-  "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar! ",-90,
-  "Antes de começarmos, como posso te chamar?",-50,
-    "formNome",-70,
+  // "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar! ",-90,
+  // "Antes de começarmos, como posso te chamar?",-50,
+  //   "formNome",-70,
 
   // "Qual a cidade e estado que você mora?",-70,
-  "Para selecionarmos o melhor profissional para o seu caso, selecione a área do Direito que mais se aproxima com o seu caso.",-70,
-     "formTipo",-70,
-  "Certo, entendi.",-70,
-  "Agora preciso que conte rapidamente  o seu caso jurídico.",-70,
-    "formDescricao",-70,
-  "Bem delicado, mas iremos te ajudar.",-70,
-  "Para que você seja contactado por um advogado, precisamos do seu email. ",-70,
+  // "Para selecionarmos o melhor profissional para o seu caso, selecione a área do Direito que mais se aproxima com o seu caso.",-70,
+  //    "formTipo",-70,
+  // "Certo, entendi.",-70,
+  // "Agora preciso que conte rapidamente  o seu caso jurídico.",-70,
+  //   "formDescricao",-70,
+  // "Bem delicado, mas iremos te ajudar.",-70,
+  // "Para que você seja contactado por um advogado, precisamos do seu email. ",-70,
     "formEmail",-70,
   "E o telefone com DDD?",-70,
     "formTelefone",-70,
@@ -61,7 +61,7 @@ function($location, $interval, $window, $http){
       $("#avatar-eloisa").removeClass("hide");
       $("#avatar-eloisa").addClass("bounceInUp");
       enviaMsg();
-    }, 5000, 1);
+    }, 5, 1);
   });
 
     var enviaMsg = function(){
@@ -172,12 +172,14 @@ function($location, $interval, $window, $http){
           $('.mensagem-container:last-child').find("#txt").text(self.usuario.email);
           enviaMsg();
         } else {
+            $(document).scrollTop(10000);
             $('#conversa').append(templateMensagem);
             $('.mensagem-container:last-child').find("#txt").text("Desculpe, não consideramos " + self.usuario.email +" um email válido!");
             $interval(function(){
               $('.mensagem-container:last-child').find(".typing").addClass("ng-hide");
               $('.mensagem-container:last-child').find("#mensagem").removeClass("ng-hide");
               if (t.data.did_you_mean) {
+                $(document).scrollTop(10000);
                 $('#conversa').append(templateMensagem);
                 $('.mensagem-container:last-child').find("#txt").text("Você quis dizer " + t.data.did_you_mean +"?");
                 $interval(function(){
