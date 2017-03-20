@@ -9,23 +9,34 @@ function($location, $interval, $window, $http){
       tipo : '',
       descricao : '',
       email: '',
-      telefone: ''
+      telefone: '',
+      cidade : ''
   };
 
   self.escondeForm = true;
   self.escondeFormTipo = true;
+  self.escondeFormCidade = true;
   self.escondeFormDescricao = true;
   self.escondeFormEmail = true;
   self.escondeFormTelefone = true;
   self.escondeFormVoltar = true;
+  self.escondeCidade = true;
+  self.escondeBotaoCidade = true;
+
+  self.codigoEstado = '';
+
+  self.estados = new Array();
+  self.cidades = new Array();
+
 
   var mensagem = ["Olá, eu sou Eloisa! :)", -70,
   "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar! ",-90,
   "Antes de começarmos, como posso te chamar?",-50,
     "formNome",-70,
 
-  // "Qual a cidade e estado que você mora?",-70,
-  "Para selecionarmos o melhor profissional para o seu caso, selecione a área do Direito que mais se aproxima com o seu caso.",-70,
+   "Qual a cidade e estado que você mora?",-70,
+    "formCidade", -70,
+   "Para selecionarmos o melhor profissional para o seu caso, selecione a área do Direito que mais se aproxima com o seu caso.",-70,
      "formTipo",-70,
   "Certo, entendi.",-70,
   "Agora preciso que conte rapidamente  o seu caso jurídico.",-70,
@@ -85,6 +96,29 @@ function($location, $interval, $window, $http){
           break;
         case "formDescricao":
           self.escondeFormDescricao = false;
+          $interval.cancel(enviaMsg);
+          $(document).scrollTop(10000);
+          break;
+        case "formCidade":
+          $http.get('http://www.geonames.org/childrenJSON?geonameId=3469034')
+          .then(successCallback, errorCallback);
+          function successCallback(response){
+            var s = angular.fromJson(response);
+            estadosObj = s.data.geonames;
+
+            for(var i = 0; i < estadosObj.length; i++) {
+              var estado= new Object();
+              estado.nome = estadosObj[i]['adminName1'];
+              estado.codigo = estadosObj[i]['geonameId'];
+              self.estados.push(estado);
+            }
+            return;
+          }
+          function errorCallback(error){
+            console.log(error);
+            return error;
+          }
+          self.escondeFormCidade = false;
           $interval.cancel(enviaMsg);
           $(document).scrollTop(10000);
           break;
@@ -149,6 +183,44 @@ function($location, $interval, $window, $http){
       $('#conversa').append(templateResposta);
       $('#avatar-cliente:last-child').text(self.usuario.letra);
       $('.mensagem-container:last-child').find("#txt").text(self.usuario.descricao);
+      enviaMsg();
+
+    }
+
+    self.selecionaEstado = function(){
+      self.escondeCidade = false;
+      self.cidades = [];
+
+      $http.get('http://www.geonames.org/childrenJSON?geonameId='+self.codigoEstado.codigo)
+      .then(successCallback, errorCallback);
+      function successCallback(response){
+        var s = angular.fromJson(response);
+        cidadesObj = s.data.geonames;
+
+        for(var i = 0; i < cidadesObj.length; i++) {
+          var cidade = new Object();
+          cidade.nome = cidadesObj[i]['name'];
+          cidade.codigo = cidadesObj[i]['geonameId'];
+          self.cidades.push(cidade);
+        }
+        return;
+      }
+      function errorCallback(error){
+        console.log(error);
+        return error;
+      }
+    }
+
+    self.selecionaCidade = function(){
+      self.usuario.cidade = self.cidade.nome;
+      console.log(self.usuario.cidade);
+      self.escondeBotaoCidade = false;
+
+    }
+
+    self.selCidade = function(){
+      i += 2;
+      self.escondeFormCidade = true;
       enviaMsg();
 
     }

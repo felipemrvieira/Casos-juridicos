@@ -1170,6 +1170,60 @@ body::scrollbar {
     }
   }
 
+  #form-cidade{
+    p{
+      font-size: 24px;
+      font-family: 'Lato-Regular';
+      }
+    select{
+      background-color: white;
+      height: 45px;
+      margin-right: 12px;
+
+
+    }
+    button{
+      vertical-align: -webkit-baseline-middle;
+      background-color: $pastel-escuro;
+      border-radius: 8px;
+      color: white;
+      height: 45px;
+      font-family: 'Lato-Regular';
+      font-size: 20px;
+      line-height: 22px;
+      border: 0;
+      padding: 0 25px;
+      transition: 0.3s ease;
+
+      &:hover{
+        background-color: $pastel-claro;
+
+      }
+    }
+  }
+
+  @media screen and (max-device-width: 700px) {
+    #form-cidade{
+      p{
+        font-size: 20px;
+        padding-bottom: 12px;
+      }
+      select{
+        margin-bottom: 8px;
+        margin-right: 0;
+      }
+
+      .input-container{
+        padding: 0;
+        button{
+          width: 100%;
+        }
+      }
+
+
+    }
+  }
+
 
 
 

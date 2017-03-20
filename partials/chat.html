@@ -148,6 +148,36 @@
     <!-- FORM TIPO CLIENTE-->
 
 
+    <!-- FORM cidade CLIENTE-->
+    <div id="form-container" class="animated bounceInUp" ng-hide="chatCtrl.escondeFormCidade">
+      <form id="form-cidade" name="cidadeUsuario" class="form-inline container">
+        <div class="col-md-12">
+          <p>Selecione seu estado e cidade</p>
+        </div>
+        <div class="col-md-12">
+          <select class="col-md-3 col-xs-12" ng-model="chatCtrl.codigoEstado" ng-options="x.nome for x in chatCtrl.estados" ng-change="chatCtrl.selecionaEstado()">
+            <option value="" disabled selected>Selecione seu estado</option>
+          </select>
+
+          <select class="col-md-6 col-xs-12" ng-hide="chatCtrl.escondeCidade" ng-model="chatCtrl.cidade" ng-options="y.nome for y in chatCtrl.cidades" ng-change="chatCtrl.selecionaCidade()">
+            <option value="" disabled selected>Selecione sua cidade</option>
+          </select>
+
+          <div class="input-container form-group col-md-2">
+            <button type="submit"
+            class="btn btn-default"
+            ng-click="chatCtrl.selCidade()"
+            ng-hide="chatCtrl.escondeBotaoCidade"
+            >Selecionar</button>
+          </div>
+        </div>
+
+
+      </form>
+    </div>
+    <!-- FORM cidade CLIENTE-->
+
+
     <!-- FORM DESCRICAO CLIENTE-->
     <div id="form-container" class="animated bounceInUp" ng-hide="chatCtrl.escondeFormDescricao">
       <form name="descricaoUsuario" class="form-inline container" ng-submit="chatCtrl.enviaDescricao()">

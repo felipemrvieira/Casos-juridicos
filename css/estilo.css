@@ -745,5 +745,37 @@ body::scrollbar {
     transition: 0.3s ease; }
     #chat .input-botao-container-voltar #botao-enviar:hover {
       background-color: #FFC371; }
+#chat #form-cidade p {
+  font-size: 24px;
+  font-family: 'Lato-Regular'; }
+#chat #form-cidade select {
+  background-color: white;
+  height: 45px;
+  margin-right: 12px; }
+#chat #form-cidade button {
+  vertical-align: -webkit-baseline-middle;
+  background-color: #FF5F6D;
+  border-radius: 8px;
+  color: white;
+  height: 45px;
+  font-family: 'Lato-Regular';
+  font-size: 20px;
+  line-height: 22px;
+  border: 0;
+  padding: 0 25px;
+  transition: 0.3s ease; }
+  #chat #form-cidade button:hover {
+    background-color: #FFC371; }
+@media screen and (max-device-width: 700px) {
+  #chat #form-cidade p {
+    font-size: 20px;
+    padding-bottom: 12px; }
+  #chat #form-cidade select {
+    margin-bottom: 8px;
+    margin-right: 0; }
+  #chat #form-cidade .input-container {
+    padding: 0; }
+    #chat #form-cidade .input-container button {
+      width: 100%; } }
 
 /*# sourceMappingURL=estilo.css.map */
