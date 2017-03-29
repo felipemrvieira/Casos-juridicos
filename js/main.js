@@ -4,7 +4,9 @@ angular.module('casosJuridicos',['ngRoute']).config(function($routeProvider, $lo
 
         $routeProvider.when('/', {
             templateUrl: 'partials/landing.html',
-            controller: 'LandingController'
+            controller: 'LandingController',
+            controllerAs: 'landingCtrl'
+
         });
 
         $routeProvider.when('/chat', {

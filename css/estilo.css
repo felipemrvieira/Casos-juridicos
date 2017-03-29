@@ -41,12 +41,6 @@ body {
   background-color: #fdfdfd;
   -webkit-font-smoothing: antialiased; }
 
-body::-webkit-scrollbar {
-  display: none; }
-
-body::scrollbar {
-  display: none; }
-
 .branco {
   color: white; }
 
@@ -70,7 +64,8 @@ body::scrollbar {
     height: 110px;
     padding-top: 25px; }
     .navbar .navbar-brand img {
-      width: 100px; }
+      width: 100px;
+      margin-left: 16px; }
   @media screen and (max-device-width: 700px) {
     .navbar .navbar-brand {
       height: 0; }
@@ -92,6 +87,57 @@ body::scrollbar {
     .navbar ul li:hover {
       border-bottom: 4px solid #FF5F6D; }
 
+.sidenav {
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 10;
+  /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: white;
+  /* Black*/
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 60px;
+  /* Place content 60px from the top */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidenav */
+  -webkit-box-shadow: 4px 0px 27px -8px #a3a3a3;
+  -moz-box-shadow: 4px 0px 27px -8px #a3a3a3;
+  box-shadow: 4px 0px 27px -8px #a3a3a3; }
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #FF5F6D;
+  display: block;
+  transition: 0.3s; }
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus {
+  color: #FFC371; }
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px; }
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px; }
+
+  .sidenav a {
+    font-size: 18px; } }
 #sec-1 {
   background: #f7f8fa;
   height: 711px; }
@@ -120,8 +166,9 @@ body::scrollbar {
     #sec-1 .container .info {
       padding-top: 0; }
     #sec-1 .container h1 {
-      font-size: 22px;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      line-height: 36px;
+      padding-bottom: 10px; }
     #sec-1 .container .chamada {
       font-size: 20px;
       padding-bottom: 0;
@@ -176,26 +223,31 @@ body::scrollbar {
   @media screen and (max-device-width: 700px) {
     #sec-1 #botao {
       display: none; } }
-  #sec-1 .homem-container {
+  #sec-1 .pessoa-container {
     text-align: center; }
-    #sec-1 .homem-container #homem {
+    #sec-1 .pessoa-container #pessoa {
       padding-top: 10px;
       padding-bottom: 10px;
-      max-width: 80%; }
+      max-width: 70%; }
   @media screen and (max-device-width: 700px) {
-    #sec-1 .homem-container {
+    #sec-1 .pessoa-container {
       text-align: center; }
-      #sec-1 .homem-container #homem {
-        max-width: 80%; } }
+      #sec-1 .pessoa-container #pessoa {
+        padding-top: 15px;
+        padding-bottom: 10px;
+        max-width: 60%; } }
   #sec-1 #botao-mobile {
     display: none; }
   @media screen and (max-device-width: 700px) {
     #sec-1 #botao-mobile {
       display: block;
-      padding-top: 20px;
+      position: absolute;
+      text-align: center;
+      left: 0;
+      bottom: 0;
       width: 100%;
       text-align: center;
-      padding-top: 5px; }
+      padding-bottom: 32px; }
       #sec-1 #botao-mobile button {
         max-width: 90%;
         text-align: center;
@@ -232,7 +284,7 @@ body::scrollbar {
     left: 0;
     bottom: 0; }
     #sec-1 .seta img {
-      width: 100px; }
+      width: 90px; }
   @media screen and (max-device-width: 700px) {
     #sec-1 .seta {
       display: none; } }

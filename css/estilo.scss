@@ -84,12 +84,12 @@ body{
   -webkit-font-smoothing: antialiased;
 }
 
-body::-webkit-scrollbar {
-  display: none;
-}
-body::scrollbar {
-  display: none;
-}
+// body::-webkit-scrollbar {
+//   display: none;
+// }
+// body::scrollbar {
+//   display: none;
+// }
 
 .branco{
   color: white;
@@ -118,6 +118,8 @@ body::scrollbar {
 
     img{
       width: 100px;
+      margin-left: 16px;
+
     }
 
 
@@ -160,6 +162,56 @@ body::scrollbar {
     }
   }
 }
+
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: white; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    -webkit-box-shadow: 4px 0px 27px -8px rgba(163,163,163,1);
+-moz-box-shadow: 4px 0px 27px -8px rgba(163,163,163,1);
+box-shadow: 4px 0px 27px -8px rgba(163,163,163,1);
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: $pastel-escuro;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: $pastel-claro;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
 #sec-1 {
     // display: -webkit-flex;
     // display: flex;
@@ -204,8 +256,9 @@ body::scrollbar {
             padding-top: 0;
           }
           h1{
-            font-size: 22px;
             margin-bottom: 0;
+            line-height: 36px;
+            padding-bottom: 10px;
           }
           .chamada{
             font-size: 20px;
@@ -291,20 +344,21 @@ body::scrollbar {
             }
 
         }
-        .homem-container{
+        .pessoa-container{
           text-align: center;
-          #homem{
+          #pessoa{
             padding-top: 10px;
             padding-bottom: 10px;
-            max-width: 80%;
+            max-width: 70%;
           }
         }
         @media screen and (max-device-width: 700px) {
-          .homem-container{
+          .pessoa-container{
             text-align: center;
-            #homem{
-
-              max-width: 80%;
+            #pessoa{
+              padding-top: 15px;
+              padding-bottom: 10px;
+              max-width: 60%;
             }
           }
 
@@ -317,34 +371,37 @@ body::scrollbar {
         @media screen and (max-device-width: 700px) {
           #botao-mobile{
             display: block;
-              padding-top: 20px;
-              width: 100%;
+            position: absolute;
+            text-align: center;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding-bottom: 32px;
+
+            button {
+              max-width: 90%;
               text-align: center;
-              padding-top: 5px;
 
-              button {
-                max-width: 90%;
-                text-align: center;
-
-                font-size: 12px;
-                text-align: center;
-                color: white;
-                font-family: 'Montserrat', sans-serif;
-                font-weight: bold;
-                text-transform: uppercase;
-                border-radius: 12px;
-                padding: 15px 30px;
-                position: relative;
+              font-size: 12px;
+              text-align: center;
+              color: white;
+              font-family: 'Montserrat', sans-serif;
+              font-weight: bold;
+              text-transform: uppercase;
+              border-radius: 12px;
+              padding: 15px 30px;
+              position: relative;
 
 
-                border: 2px #FF5F6D solid;
-                background-color: #FF5F6D;
-                text-transform: uppercase;
-                outline: 0;
-                overflow:hidden;
-                z-index: 1;
-                cursor: pointer;
-              }
+              border: 2px #FF5F6D solid;
+              background-color: #FF5F6D;
+              text-transform: uppercase;
+              outline: 0;
+              overflow:hidden;
+              z-index: 1;
+              cursor: pointer;
+            }
           }
         }
 
@@ -355,7 +412,7 @@ body::scrollbar {
           left: 0;
           bottom: 0;
           img{
-            width: 100px;
+            width: 90px;
           }
         }
 
