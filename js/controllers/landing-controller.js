@@ -42,9 +42,12 @@ function($scope, $sce, $location){
        ){
          var height = $(window).height() -50 ;
          var unitHeight = parseInt(height) + 'px';
-         $('#sec-1').css('height',unitHeight);        }
+         $('#sec-1').css('height',unitHeight);
+       }
        else {
-          return ;
+         var height = $(window).height() -110 ;
+         var unitHeight = parseInt(height) + 'px';
+         $('#sec-1').css('height',unitHeight);
         }
 
 
