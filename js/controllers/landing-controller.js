@@ -31,9 +31,21 @@ function($scope, $sce, $location){
 
 //seta a altura da area
   $(function() {
-      var height = $(window).height() ;
-      var unitHeight = parseInt(height) + 'px';
-      $('#sec-1').css('height',unitHeight);
+
+      if( navigator.userAgent.match(/Android/i)
+       || navigator.userAgent.match(/webOS/i)
+       || navigator.userAgent.match(/iPhone/i)
+       || navigator.userAgent.match(/iPad/i)
+       || navigator.userAgent.match(/iPod/i)
+       || navigator.userAgent.match(/BlackBerry/i)
+       || navigator.userAgent.match(/Windows Phone/i)
+       ){
+         var height = $(window).height() -50 ;
+         var unitHeight = parseInt(height) + 'px';
+         $('#sec-1').css('height',unitHeight);        }
+       else {
+          return ;
+        }
 
 
   });

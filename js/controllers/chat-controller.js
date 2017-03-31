@@ -29,7 +29,7 @@ function($location, $interval, $window, $http){
   self.cidades = new Array();
 
 
-  var mensagem = ["Olá, eu sou Eloisa! :)", -70,
+  var mensagem = ["Olá!", -70,
   "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar! ",-90,
   "Antes de começarmos, como posso te chamar?",-50,
     "formNome",-70,
@@ -73,7 +73,7 @@ function($location, $interval, $window, $http){
     var enviaMsg = function(){
       $interval(function(){
         validaMsg();
-        time = 1200;
+        time = 1500;
       }, time, 1);
     }
 
@@ -144,7 +144,7 @@ function($location, $interval, $window, $http){
             $('.mensagem-container:last-child').find(".typing").addClass("ng-hide");
             $('.mensagem-container:last-child').find("#mensagem").removeClass("ng-hide");
             enviaMsg();
-          }, 1000, 1);
+          }, 1600, 1);
           i += 2;
           $(document).scrollTop(10000);
 
@@ -157,7 +157,7 @@ function($location, $interval, $window, $http){
       i += 2;
       $('#conversa').append(templateResposta);
       $('#avatar-cliente:last-child').text(self.usuario.letra);
-        $('.mensagem-container:last-child').find("#txt").text("Me chamo " + self.usuario.nome);
+      $('.mensagem-container:last-child').find("#txt").text(self.usuario.nome);
       $interval(function(){
         $('#conversa').append(templateMensagem);
         $('.mensagem-container:last-child').find("#txt").text("Prazer, " + self.usuario.nome+"!");
@@ -172,7 +172,7 @@ function($location, $interval, $window, $http){
       i += 2;
       $('#conversa').append(templateResposta);
       $('#avatar-cliente:last-child').text(self.usuario.letra);
-      $('.mensagem-container:last-child').find("#txt").text("Estou com problema relacionado a área: " + self.usuario.tipo);
+      $('.mensagem-container:last-child').find("#txt").text(self.usuario.tipo);
       enviaMsg();
 
     }
@@ -213,7 +213,6 @@ function($location, $interval, $window, $http){
 
     self.selecionaCidade = function(){
       self.usuario.cidade = self.cidade.nome;
-      console.log(self.usuario.cidade);
       self.escondeBotaoCidade = false;
 
     }
@@ -221,6 +220,9 @@ function($location, $interval, $window, $http){
     self.selCidade = function(){
       i += 2;
       self.escondeFormCidade = true;
+      $('#conversa').append(templateResposta);
+      $('#avatar-cliente:last-child').text(self.usuario.letra);
+      $('.mensagem-container:last-child').find("#txt").text(self.usuario.cidade);
       enviaMsg();
 
     }

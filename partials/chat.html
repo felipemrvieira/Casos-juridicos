@@ -25,10 +25,7 @@
       </div>
     </div>
 
-    <div id="conversa" class=" "style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
- unselectable="on"
- onselectstart="return false;"
- onmousedown="return false;">
+    <div id="conversa" class="">
 
       <!--TEMPLATE MENSAGEM-->
       <script id="hidden-template-mensagem" type="text/x-custom-template">
@@ -67,6 +64,7 @@
       <form name="nomeUsuario" class="form-inline container" ng-submit="chatCtrl.enviaNome()">
         <div class="input-texto-container form-group col-xs-12 ">
           <input
+          autofocus
           type="text"
           name="nome"
           required
@@ -93,28 +91,28 @@
             <button type="submit"
             id="botao-enviar"
             class="btn btn-default"
-            ng-click="chatCtrl.usuario.tipo='trabalhista'; chatCtrl.selTipo()"
+            ng-click="chatCtrl.usuario.tipo='Trabalhista'; chatCtrl.selTipo()"
             >Trabalhista</button>
           </div>
           <div class="input-botao-container form-group">
             <button type="submit"
             id="botao-enviar"
             class="btn btn-default"
-            ng-click="chatCtrl.usuario.tipo='pensao'; chatCtrl.selTipo()"
+            ng-click="chatCtrl.usuario.tipo='Pensão'; chatCtrl.selTipo()"
             >Pensão</button>
           </div>
           <div class="input-botao-container form-group">
             <button type="submit"
             id="botao-enviar"
             class="btn btn-default"
-            ng-click="chatCtrl.usuario.tipo='familia'; chatCtrl.selTipo()"
+            ng-click="chatCtrl.usuario.tipo='Família'; chatCtrl.selTipo()"
             >Família</button>
           </div>
           <div class="input-botao-container form-group">
             <button type="submit"
             id="botao-enviar"
             class="btn btn-default"
-            ng-click="chatCtrl.usuario.tipo='bancario'; chatCtrl.selTipo()"
+            ng-click="chatCtrl.usuario.tipo='Bancário'; chatCtrl.selTipo()"
             >Bancário</button>
           </div>
         </div>
@@ -124,14 +122,14 @@
             <button type="submit"
             id="botao-enviar"
             class="btn btn-default"
-            ng-click="chatCtrl.usuario.tipo='consumidor'; chatCtrl.selTipo()"
+            ng-click="chatCtrl.usuario.tipo='Consumidor'; chatCtrl.selTipo()"
             >Consumidor</button>
           </div>
           <div class="input-botao-container form-group">
             <button type="submit"
             id="botao-enviar"
             class="btn btn-default"
-            ng-click="chatCtrl.usuario.tipo='inss'; chatCtrl.selTipo()"
+            ng-click="chatCtrl.usuario.tipo='INSS'; chatCtrl.selTipo()"
             >INSS</button>
           </div>
 
@@ -139,7 +137,7 @@
             <button type="submit"
             id="botao-enviar"
             class="btn btn-default"
-            ng-click="chatCtrl.usuario.tipo='outro'; chatCtrl.selTipo()"
+            ng-click="chatCtrl.usuario.tipo='Outro'; chatCtrl.selTipo()"
             >Outro</button>
           </div>
 
@@ -158,7 +156,7 @@
           <p>Selecione seu estado e cidade</p>
         </div>
         <div class="col-md-12">
-          <select class="col-md-3 col-xs-12" ng-model="chatCtrl.codigoEstado" ng-options="x.nome for x in chatCtrl.estados" ng-change="chatCtrl.selecionaEstado()">
+          <select autofocus class="col-md-3 col-xs-12" ng-model="chatCtrl.codigoEstado" ng-options="x.nome for x in chatCtrl.estados" ng-change="chatCtrl.selecionaEstado()">
             <option value="" disabled selected>Selecione seu estado</option>
           </select>
 
@@ -186,6 +184,7 @@
       <form name="descricaoUsuario" class="form-inline container" ng-submit="chatCtrl.enviaDescricao()">
         <div class="input-texto-container form-group">
           <textarea
+            autofocus
             placeholder="Descreva seu caso!"
 
           class="form-control"
@@ -208,6 +207,7 @@
       <form name="emailUsuario" class="form-inline container" ng-submit="chatCtrl.enviaEmail()">
         <div class="input-texto-container form-group">
           <input
+          autofocus
           type="email"
           name="email"
           required
@@ -230,6 +230,7 @@
       <form name="telefoneUsuario" class="form-inline container" ng-submit="chatCtrl.enviaTelefone()">
         <div class="input-texto-container form-group">
           <input
+          autofocus
           type="number"
           name="telefone"
           required
