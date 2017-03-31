@@ -229,7 +229,7 @@ body {
     #sec-1 .pessoa-container #pessoa {
       padding-top: 10px;
       padding-bottom: 10px;
-      max-width: 80%; }
+      width: 105%; }
   @media screen and (max-device-width: 700px) {
     #sec-1 .pessoa-container {
       text-align: center; }

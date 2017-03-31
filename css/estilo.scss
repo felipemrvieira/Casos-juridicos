@@ -63,7 +63,7 @@ $pastel-claro: #FFC371;
    -moz-animation-duration: 5s;
    -moz-animation-iteration-count: infinite;
    -moz-animation-timing-function: ease-in-out;
-   
+
 }
 
 @-webkit-keyframes Floatingx{
@@ -350,7 +350,7 @@ box-shadow: 4px 0px 27px -8px rgba(163,163,163,1);
           #pessoa{
             padding-top: 10px;
             padding-bottom: 10px;
-            max-width: 80%;
+            width: 105%;
           }
         }
         @media screen and (max-device-width: 700px) {

@@ -38,10 +38,9 @@ function($location, $interval, $window, $http){
     "formCidade", -70,
    "Para selecionarmos o melhor profissional para o seu caso, selecione a área do Direito que mais se aproxima com o seu caso.",-70,
      "formTipo",-70,
-  "Certo, entendi.",-70,
+  "Certo, entendi!", -70,
   "Agora preciso que conte rapidamente  o seu caso jurídico.",-70,
     "formDescricao",-70,
-  "Bem delicado, mas iremos te ajudar.",-70,
   "Para que você seja contactado por um advogado, precisamos do seu email. ",-70,
     "formEmail",-70,
   "E o telefone com DDD?",-70,
@@ -169,12 +168,18 @@ function($location, $interval, $window, $http){
 
     self.selTipo = function(){
       self.escondeFormTipo = true;
-      i += 2;
+
       $('#conversa').append(templateResposta);
       $('#avatar-cliente:last-child').text(self.usuario.letra);
       $('.mensagem-container:last-child').find("#txt").text(self.usuario.tipo);
-      enviaMsg();
 
+      if (self.usuario.tipo === "Outro") {
+        i += 4;
+        enviaMsg();
+      }else{
+        i += 2;
+        enviaMsg();
+      }
     }
 
     self.enviaDescricao = function(){
@@ -183,8 +188,17 @@ function($location, $interval, $window, $http){
       $('#conversa').append(templateResposta);
       $('#avatar-cliente:last-child').text(self.usuario.letra);
       $('.mensagem-container:last-child').find("#txt").text(self.usuario.descricao);
-      enviaMsg();
 
+      $interval(function(){
+        $('#conversa').append(templateMensagem);
+        var x = Math.floor(Math.random() * 2);
+        var msgRespostaTipo = ["Bem delicado, mas iremos te ajudar!", "Tudo bem, fique tranquilo pois o seu caso tem solução!"];
+
+          $('.mensagem-container:last-child').find("#txt").text(msgRespostaTipo[x]);
+        $('.mensagem-container:last-child').find(".typing").addClass("ng-hide");
+        $('.mensagem-container:last-child').find("#mensagem").removeClass("ng-hide");
+        enviaMsg();
+      }, 2000, 1);
     }
 
     self.selecionaEstado = function(){
