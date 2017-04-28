@@ -1,11 +1,19 @@
-angular.module('casosJuridicos').controller('ChatController', ['$location' ,'$interval', '$window', '$http',
+angular.module('casosJuridicos')
+
+.config(function($sceDelegateProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist([
+   'self',
+   'https://elojuridico.com/dados/cidade-busca**'
+    ]);
+  })
+
+.controller('ChatController', ['$location' ,'$interval', '$window', '$http',
 function($location, $interval, $window, $http){
 
   var self = this;
 
   self.usuario = {
       nome : '',
-      letra : '',
       tipo : '',
       descricao : '',
       email: '',
@@ -24,15 +32,15 @@ function($location, $interval, $window, $http){
   self.escondeBotaoCidade = true;
 
   self.codigoEstado = '';
+  self.letra = '';
 
   self.estados = new Array();
-  self.cidades = new Array();
 
 
   var mensagem = ["Olá!", -70,
-  "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar! ",-90,
-  "Antes de começarmos, como posso te chamar?",-50,
-    "formNome",-70,
+  // "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar! ",-90,
+  // "Antes de começarmos, como posso te chamar?",-50,
+  //   "formNome",-70,
 
    "Qual a cidade e estado que você mora?",-70,
     "formCidade", -70,
@@ -66,7 +74,7 @@ function($location, $interval, $window, $http){
       $("#avatar-eloisa").removeClass("hide");
       $("#avatar-eloisa").addClass("bounceInUp");
       enviaMsg();
-    }, 5000, 1);
+    }, 5, 1);
   });
 
     var enviaMsg = function(){
@@ -77,6 +85,7 @@ function($location, $interval, $window, $http){
     }
 
     function validaMsg(){
+      console.log(self.usuario)
       switch (mensagem[i]) {
         case "fim":
           $interval.cancel(enviaMsg);
@@ -99,24 +108,62 @@ function($location, $interval, $window, $http){
           $(document).scrollTop(10000);
           break;
         case "formCidade":
-          $http.get('http://www.geonames.org/childrenJSON?geonameId=3469034')
-          .then(successCallback, errorCallback);
-          function successCallback(response){
-            var s = angular.fromJson(response);
-            estadosObj = s.data.geonames;
+          self.listaCidades = function(){
 
-            for(var i = 0; i < estadosObj.length; i++) {
-              var estado= new Object();
-              estado.nome = estadosObj[i]['adminName1'];
-              estado.codigo = estadosObj[i]['geonameId'];
-              self.estados.push(estado);
+            //se o usuario digitar mais de 3 letras, faz um get e manda a lista para o front
+            if (self.usuario.cidade.length == 3) {
+              console.log("buscado");
+              $http.get('https://elojuridico.com/dados/cidade-busca?search='+self.usuario.cidade)
+              .then(successCallback, errorCallback);
+              function successCallback(response){
+                self.cidades = new Array();
+                var jsonCidades = angular.fromJson(response.data);
+
+                for(var i = 0; i < jsonCidades.length; i++) {
+                    var cidade = new Object();
+                    cidade.nome = jsonCidades[i]['label'];
+                    cidade.codigo = jsonCidades[i]['value'];
+
+                    console.log(cidade.nome +' - '+ cidade.codigo);
+                    //esse array vai para um datalist no html
+                    self.cidades.push(cidade);
+                  }
+
+                return;
+              }
+              function errorCallback(error){
+                console.log(error);
+                return error;
+              }
+
+
+
+
+
+
             }
-            return;
+
           }
-          function errorCallback(error){
-            console.log(error);
-            return error;
-          }
+
+
+          // $http.get('http://www.geonames.org/childrenJSON?geonameId=3469034')
+          // .then(successCallback, errorCallback);
+          // function successCallback(response){
+          //   var s = angular.fromJson(response);
+          //   estadosObj = s.data.geonames;
+          //
+          //   for(var i = 0; i < estadosObj.length; i++) {
+          //     var estado= new Object();
+          //     estado.nome = estadosObj[i]['adminName1'];
+          //     estado.codigo = estadosObj[i]['geonameId'];
+          //     self.estados.push(estado);
+          //   }
+          //   return;
+          // }
+          // function errorCallback(error){
+          //   console.log(error);
+          //   return error;
+          // }
           self.escondeFormCidade = false;
           $interval.cancel(enviaMsg);
           $(document).scrollTop(10000);
@@ -152,10 +199,10 @@ function($location, $interval, $window, $http){
 
     self.enviaNome = function(){
       self.escondeForm = true;
-      self.usuario.letra = self.usuario.nome.substring(0,1).toUpperCase();
+      self.letra = self.usuario.nome.substring(0,1).toUpperCase();
       i += 2;
       $('#conversa').append(templateResposta);
-      $('#avatar-cliente:last-child').text(self.usuario.letra);
+      $('#avatar-cliente:last-child').text(self.letra);
       $('.mensagem-container:last-child').find("#txt").text(self.usuario.nome);
       $interval(function(){
         $('#conversa').append(templateMensagem);
@@ -170,7 +217,7 @@ function($location, $interval, $window, $http){
       self.escondeFormTipo = true;
 
       $('#conversa').append(templateResposta);
-      $('#avatar-cliente:last-child').text(self.usuario.letra);
+      $('#avatar-cliente:last-child').text(self.letra);
       $('.mensagem-container:last-child').find("#txt").text(self.usuario.tipo);
 
       if (self.usuario.tipo === "Outro") {
@@ -186,7 +233,7 @@ function($location, $interval, $window, $http){
       self.escondeFormDescricao = true;
       i += 2;
       $('#conversa').append(templateResposta);
-      $('#avatar-cliente:last-child').text(self.usuario.letra);
+      $('#avatar-cliente:last-child').text(self.letra);
       $('.mensagem-container:last-child').find("#txt").text(self.usuario.descricao);
 
       $interval(function(){
@@ -201,32 +248,9 @@ function($location, $interval, $window, $http){
       }, 2000, 1);
     }
 
-    self.selecionaEstado = function(){
-      self.escondeCidade = false;
-      self.cidades = [];
-
-      $http.get('http://www.geonames.org/childrenJSON?geonameId='+self.codigoEstado.codigo)
-      .then(successCallback, errorCallback);
-      function successCallback(response){
-        var s = angular.fromJson(response);
-        cidadesObj = s.data.geonames;
-
-        for(var i = 0; i < cidadesObj.length; i++) {
-          var cidade = new Object();
-          cidade.nome = cidadesObj[i]['name'];
-          cidade.codigo = cidadesObj[i]['geonameId'];
-          self.cidades.push(cidade);
-        }
-        return;
-      }
-      function errorCallback(error){
-        console.log(error);
-        return error;
-      }
-    }
 
     self.selecionaCidade = function(){
-      self.usuario.cidade = self.cidade.nome;
+      console.log(" ------ Cidade selecionada: " + self.usuario.cidade);
       self.escondeBotaoCidade = false;
 
     }
@@ -235,7 +259,7 @@ function($location, $interval, $window, $http){
       i += 2;
       self.escondeFormCidade = true;
       $('#conversa').append(templateResposta);
-      $('#avatar-cliente:last-child').text(self.usuario.letra);
+      $('#avatar-cliente:last-child').text(self.letra);
       $('.mensagem-container:last-child').find("#txt").text(self.usuario.cidade);
       enviaMsg();
 
@@ -250,7 +274,7 @@ function($location, $interval, $window, $http){
         if (t.data.smtp_check === true) {
           self.escondeFormEmail = true;
           $('#conversa').append(templateResposta);
-          $('#avatar-cliente:last-child').text(self.usuario.letra);
+          $('#avatar-cliente:last-child').text(self.letra);
           i += 2;
           $('.mensagem-container:last-child').find("#txt").text(self.usuario.email);
           $(document).scrollTop(10000);
@@ -290,7 +314,7 @@ function($location, $interval, $window, $http){
     self.enviaTelefone = function(){
       self.escondeFormTelefone = true;
       $('#conversa').append(templateResposta);
-      $('#avatar-cliente:last-child').text(self.usuario.letra);
+      $('#avatar-cliente:last-child').text(self.letra);
       i += 2;
       $('.mensagem-container:last-child').find("#txt").text(String(self.usuario.telefone));
       enviaMsg();
@@ -299,13 +323,6 @@ function($location, $interval, $window, $http){
     self.voltar = function (){
       $location.path( '/' );
     };
-
-
-
-
-
-
-
 
     var divHover = null,
       windowClick = false;

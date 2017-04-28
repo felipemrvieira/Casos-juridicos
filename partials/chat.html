@@ -153,24 +153,29 @@
     <div id="form-container" class="animated bounceInUp" ng-hide="chatCtrl.escondeFormCidade">
       <form id="form-cidade" name="cidadeUsuario" class="form-inline container">
         <div class="col-md-12">
-          <p>Selecione seu estado e cidade</p>
+          <p>Digite sua cidade</p>
         </div>
         <div class="col-md-12">
-          <select autofocus class="col-md-3 col-xs-12" ng-model="chatCtrl.codigoEstado" ng-options="x.nome for x in chatCtrl.estados" ng-change="chatCtrl.selecionaEstado()">
-            <option value="" disabled selected>Selecione seu estado</option>
-          </select>
 
-          <select class="col-md-6 col-xs-12" ng-hide="chatCtrl.escondeCidade" ng-model="chatCtrl.cidade" ng-options="y.nome for y in chatCtrl.cidades" ng-change="chatCtrl.selecionaCidade()">
-            <option value="" disabled selected>Selecione sua cidade</option>
-          </select>
+          <div class="col-md-9 col-sm-12" style="height:45px;">
+            
 
-          <div class="input-container form-group col-md-2">
+            <input class="col-md-12 col-sm-12 col-xs-12" list="cidades" name="cidade" autocomplete="off"
+            ng-model="chatCtrl.usuario.cidade" ng-blur="chatCtrl.selecionaCidade()"
+            ng-keypress="chatCtrl.listaCidades()"  placeholder="Digite sua cidade" autofocus>
+
+            <datalist id="cidades">
+              <option  data-ng-repeat="cidade in chatCtrl.cidades" value="{{cidade.nome}}">
+            </datalist>
+          </div>
+
+          <div class="input-container form-group col-md-3">
             <button type="submit"
             class="btn btn-default"
             ng-click="chatCtrl.selCidade()"
-            ng-hide="chatCtrl.escondeBotaoCidade"
             >Selecionar</button>
           </div>
+
         </div>
 
 

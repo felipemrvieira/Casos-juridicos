@@ -1,9 +1,0 @@
-{
-"id":"question_id",
-"question":[{"text":"blá","speed":10}],
-"input":{
-    "type":"button",
-    "answers":[
-        {"value":"","label":""}
-    ]},
-}

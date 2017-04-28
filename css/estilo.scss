@@ -1233,10 +1233,13 @@ box-shadow: 4px 0px 27px -8px rgba(163,163,163,1);
       font-size: 24px;
       font-family: 'Lato-Regular';
       }
-    select{
+    input{
+      border: none;
+      border-radius: 8px;
       background-color: white;
       height: 45px;
       margin-right: 12px;
+      margin-bottom: 12px;
 
 
     }

@@ -799,10 +799,13 @@ body {
 #chat #form-cidade p {
   font-size: 24px;
   font-family: 'Lato-Regular'; }
-#chat #form-cidade select {
+#chat #form-cidade input {
+  border: none;
+  border-radius: 8px;
   background-color: white;
   height: 45px;
-  margin-right: 12px; }
+  margin-right: 12px;
+  margin-bottom: 12px; }
 #chat #form-cidade button {
   vertical-align: -webkit-baseline-middle;
   background-color: #FF5F6D;
