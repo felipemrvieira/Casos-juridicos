@@ -14,7 +14,7 @@ function($location, $interval, $window, $http){
 
   self.usuario = {
       nome : '',
-      tipo : '',
+      tipoCausa : '',
       descricao : '',
       email: '',
       telefone: '',
@@ -38,12 +38,12 @@ function($location, $interval, $window, $http){
 
 
   var mensagem = ["Olá!", -70,
-  // "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar! ",-90,
-  // "Antes de começarmos, como posso te chamar?",-50,
-  //   "formNome",-70,
+  "Sei que o que te trouxe aqui não deve ser um assunto tão agradável, mas não se preocupe eu estou aqui para te ajudar! ",-90,
+  "Antes de começarmos, como posso te chamar?",-50,
+    "formNome",-70,
 
-   "Qual a cidade e estado que você mora?",-70,
-    "formCidade", -70,
+  //  "Qual a cidade e estado que você mora?",-70,
+  //   "formCidade", -70,
    "Para selecionarmos o melhor profissional para o seu caso, selecione a área do Direito que mais se aproxima com o seu caso.",-70,
      "formTipo",-70,
   "Certo, entendi!", -70,
@@ -74,7 +74,7 @@ function($location, $interval, $window, $http){
       $("#avatar-eloisa").removeClass("hide");
       $("#avatar-eloisa").addClass("bounceInUp");
       enviaMsg();
-    }, 5, 1);
+    }, 5000, 1);
   });
 
     var enviaMsg = function(){
@@ -85,7 +85,7 @@ function($location, $interval, $window, $http){
     }
 
     function validaMsg(){
-      console.log(self.usuario)
+      // console.log(self.usuario)
       switch (mensagem[i]) {
         case "fim":
           $interval.cancel(enviaMsg);
@@ -112,7 +112,7 @@ function($location, $interval, $window, $http){
 
             //se o usuario digitar mais de 3 letras, faz um get e manda a lista para o front
             if (self.usuario.cidade.length == 3) {
-              console.log("buscado");
+              // console.log("buscado");
               $http.get('https://elojuridico.com/dados/cidade-busca?search='+self.usuario.cidade)
               .then(successCallback, errorCallback);
               function successCallback(response){
@@ -124,7 +124,7 @@ function($location, $interval, $window, $http){
                     cidade.nome = jsonCidades[i]['label'];
                     cidade.codigo = jsonCidades[i]['value'];
 
-                    console.log(cidade.nome +' - '+ cidade.codigo);
+                    // console.log(cidade.nome +' - '+ cidade.codigo);
                     //esse array vai para um datalist no html
                     self.cidades.push(cidade);
                   }
@@ -182,6 +182,7 @@ function($location, $interval, $window, $http){
           self.escondeFormVoltar = false;
           $interval.cancel(enviaMsg);
           $(document).scrollTop(10000);
+          console.log(self.usuario)
           break;
         default:
           $('#conversa').append(templateMensagem);
@@ -218,9 +219,9 @@ function($location, $interval, $window, $http){
 
       $('#conversa').append(templateResposta);
       $('#avatar-cliente:last-child').text(self.letra);
-      $('.mensagem-container:last-child').find("#txt").text(self.usuario.tipo);
+      $('.mensagem-container:last-child').find("#txt").text(self.usuario.tipoCausa);
 
-      if (self.usuario.tipo === "Outro") {
+      if (self.usuario.tipoCausa === "Outro") {
         i += 4;
         enviaMsg();
       }else{
@@ -250,8 +251,15 @@ function($location, $interval, $window, $http){
 
 
     self.selecionaCidade = function(){
-      console.log(" ------ Cidade selecionada: " + self.usuario.cidade);
-      self.escondeBotaoCidade = false;
+      if (self.usuario.cidade.length > 3) {
+          // console.log(" ------ Cidade selecionada: " + self.usuario.cidade);
+          $interval(function(){
+            self.escondeBotaoCidade = false;
+            time = 1500;
+          }, time, 1);
+
+      }
+
 
     }
 
@@ -265,9 +273,13 @@ function($location, $interval, $window, $http){
 
     }
 
+    self.exibeCidade = function(){
+      alert("teste");
+    }
+
     self.enviaEmail = function(){
 
-      $http.get('https://apilayer.net/api/check?access_key=82b26925292bbe8799720f003d776520&email='+self.usuario.email+'&smtp=1&format=1')
+      $http.get('https://apilayer.net/api/check?access_key=b8857b9961a94eed920d72c25e7d22f6&email='+self.usuario.email+'&smtp=1&format=1')
       .then(successCallback, errorCallback);
       function successCallback(response){
         var t = angular.fromJson(response);

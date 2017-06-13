@@ -91,28 +91,28 @@
             <button type="submit"
             id="botao-enviar"
             class="btn btn-default"
-            ng-click="chatCtrl.usuario.tipo='Trabalhista'; chatCtrl.selTipo()"
+            ng-click="chatCtrl.usuario.tipoCausa='Trabalhista'; chatCtrl.selTipo()"
             >Trabalhista</button>
           </div>
           <div class="input-botao-container form-group">
             <button type="submit"
             id="botao-enviar"
             class="btn btn-default"
-            ng-click="chatCtrl.usuario.tipo='Pensão'; chatCtrl.selTipo()"
+            ng-click="chatCtrl.usuario.tipoCausa='Pensão'; chatCtrl.selTipo()"
             >Pensão</button>
           </div>
           <div class="input-botao-container form-group">
             <button type="submit"
             id="botao-enviar"
             class="btn btn-default"
-            ng-click="chatCtrl.usuario.tipo='Família'; chatCtrl.selTipo()"
+            ng-click="chatCtrl.usuario.tipoCausa='Família'; chatCtrl.selTipo()"
             >Família</button>
           </div>
           <div class="input-botao-container form-group">
             <button type="submit"
             id="botao-enviar"
             class="btn btn-default"
-            ng-click="chatCtrl.usuario.tipo='Bancário'; chatCtrl.selTipo()"
+            ng-click="chatCtrl.usuario.tipoCausa='Bancário'; chatCtrl.selTipo()"
             >Bancário</button>
           </div>
         </div>
@@ -122,14 +122,14 @@
             <button type="submit"
             id="botao-enviar"
             class="btn btn-default"
-            ng-click="chatCtrl.usuario.tipo='Consumidor'; chatCtrl.selTipo()"
+            ng-click="chatCtrl.usuario.tipoCausa='Consumidor'; chatCtrl.selTipo()"
             >Consumidor</button>
           </div>
           <div class="input-botao-container form-group">
             <button type="submit"
             id="botao-enviar"
             class="btn btn-default"
-            ng-click="chatCtrl.usuario.tipo='INSS'; chatCtrl.selTipo()"
+            ng-click="chatCtrl.usuario.tipoCausa='INSS'; chatCtrl.selTipo()"
             >INSS</button>
           </div>
 
@@ -137,7 +137,7 @@
             <button type="submit"
             id="botao-enviar"
             class="btn btn-default"
-            ng-click="chatCtrl.usuario.tipo='Outro'; chatCtrl.selTipo()"
+            ng-click="chatCtrl.usuario.tipoCausa='Outro'; chatCtrl.selTipo()"
             >Outro</button>
           </div>
 
@@ -158,10 +158,10 @@
         <div class="col-md-12">
 
           <div class="col-md-9 col-sm-12" style="height:45px;">
-            
+
 
             <input class="col-md-12 col-sm-12 col-xs-12" list="cidades" name="cidade" autocomplete="off"
-            ng-model="chatCtrl.usuario.cidade" ng-blur="chatCtrl.selecionaCidade()"
+            ng-model="chatCtrl.usuario.cidade" ng-change="chatCtrl.selecionaCidade()"
             ng-keypress="chatCtrl.listaCidades()"  placeholder="Digite sua cidade" autofocus>
 
             <datalist id="cidades">
@@ -169,7 +169,8 @@
             </datalist>
           </div>
 
-          <div class="input-container form-group col-md-3">
+
+          <div class="input-container form-group col-md-3" ng-hide="chatCtrl.escondeBotaoCidade">
             <button type="submit"
             class="btn btn-default"
             ng-click="chatCtrl.selCidade()"
